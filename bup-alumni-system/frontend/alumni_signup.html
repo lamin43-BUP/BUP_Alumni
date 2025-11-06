@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Signup | BUP Alumni Association</title>
+    <link rel="stylesheet" href="/bup-alumni-system/css/style.css">
+    <link rel="stylesheet" href="/bup-alumni-system/css/signup.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="signup-header">
+        <h1>BUP Alumni Association</h1>
+    </header>
+
+    <!-- Main Signup Section -->
+    <section class="signup-container">
+        <div class="signup-box">
+            <h2>Alumni Registration</h2>
+            <form id="alumniSignupForm" class="signup-form" novalidate>
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h3>Personal Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentId">Student ID <span class="required">*</span></label>
+                        <input type="text" id="studentId" name="studentId" placeholder="Your BUP Student ID" required>
+                    </div>
+
+                    <div class="form-group autocomplete">
+                        <label for="department">Department <span class="required">*</span></label>
+                        <input type="text" id="department" name="department" placeholder="Start typing to search department" autocomplete="off" required>
+                        <div id="department-autocomplete-list" class="autocomplete-items"></div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="batch">Batch <span class="required">*</span></label>
+                            <select id="batch" name="batch" required>
+                                <option value="" disabled selected>Select your batch</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="graduationYear">Graduation Year <span class="required">*</span></label>
+                            <select id="graduationYear" name="graduationYear" required>
+                                <option value="" disabled selected>Select graduation year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alumniStatus">Alumni Status <span class="required">*</span></label>
+                        <select id="alumniStatus" name="alumniStatus" required>
+                            <option value="" disabled selected>Select your status</option>
+                            <option value="graduate">Graduate</option>
+                            <option value="postgraduate">Postgraduate</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="form-section">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+8801XXXXXXXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" placeholder="Your current address" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- Professional Information -->
+                <div class="form-section">
+                    <h3>Professional Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="currentWorkplace">Current Workplace</label>
+                        <input type="text" id="currentWorkplace" name="currentWorkplace" placeholder="Your current organization">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="designation">Designation</label>
+                        <input type="text" id="designation" name="designation" placeholder="Your current position">
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="form-section">
+                    <h3>Additional Information</h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Gender <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="Male" required>
+                                <span>Male</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="Female">
+                                <span>Female</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="Not to mention">
+                                <span>Not to mention</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bloodgroup">Blood Group <span class="required">*</span></label>
+                        <select id="bloodgroup" name="bloodgroup" required>
+                            <option value="" disabled selected>Select blood group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="religion">Religion <span class="required">*</span></label>
+                        <select id="religion" name="religion" required>
+                            <option value="" disabled selected>Select religion</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Hinduism">Hinduism</option>
+                            <option value="Christianity">Christianity</option>
+                            <option value="Buddhism">Buddhism</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="form-section">
+                    <h3>Social Media Links</h3>
+                    
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn URL</label>
+                        <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="facebook">Facebook URL</label>
+                        <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/yourprofile">
+                    </div>
+                </div>
+
+                <!-- Account Security -->
+                <div class="form-section">
+                    <h3>Account Security</h3>
+                    
+                    <div class="form-group">
+                        <label for="password">Password <span class="required">*</span></label>
+                        <input type="password" id="password" name="password" placeholder="Choose a secure password" required minlength="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required minlength="8">
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="button" id="sendOtpBtn" class="btn-primary">Send OTP</button>
+                    <button type="submit" id="submitBtn" disabled class="btn-secondary">Create Account</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- OTP Modal -->
+    <div id="otpModal" class="modal" aria-hidden="true" aria-labelledby="otpModalTitle">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <h2 id="otpModalTitle">Verify Your Email</h2>
+            <p>We sent a 6-digit OTP to your email.</p>
+            <input type="text" id="otpInput" maxlength="6" placeholder="Enter OTP" aria-label="Enter OTP code">
+            <div class="otp-actions">
+                <button id="resendOtpBtn" class="btn-text">Resend OTP</button>
+                <span id="otpTimer" class="otp-timer"></span>
+            </div>
+            <p id="otpError" class="error-message" aria-live="polite">Incorrect OTP. Please try again.</p>
+            <button id="otpVerifyBtn" class="btn-primary">Verify OTP</button>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="signup_select.html">Back to Signup Options</a>
+    </div>
+
+    <script src="/bup-alumni-system/js/alumni_signup.js"></script>
+</body>
+</html>

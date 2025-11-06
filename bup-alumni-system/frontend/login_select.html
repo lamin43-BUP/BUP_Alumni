@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Login Type | BUP Alumni Association</title>
+  <link rel="stylesheet" href="/bup-alumni-system/css/style.css">
+  <link rel="stylesheet" href="/bup-alumni-system/css/login_select.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="login-header">
+    <h1>BUP Alumni Association</h1>
+  </header>
+
+  <!-- Main Login Selection Section -->
+  <section class="login-select-container">
+    <div class="login-select-box">
+      <h2>Select Login Type</h2>
+      <div class="login-options">
+        <div class="login-option" onclick="window.location.href='student_login.html'">
+          <div class="option-icon">
+            <img src="/bup-alumni-system/images/student-icon.png" alt="Student" onerror="this.style.display='none'">
+            <div class="fallback-icon">🎓</div>
+          </div>
+          <h3>Login as Student</h3>
+          <p>Current BUP students</p>
+        </div>
+        
+        <div class="login-option" onclick="window.location.href='alumni_login.html'">
+          <div class="option-icon">
+            <img src="/bup-alumni-system/images/alumni-icon.png" alt="Alumni" onerror="this.style.display='none'">
+            <div class="fallback-icon">👨‍🎓</div>
+          </div>
+          <h3>Login as Alumni</h3>
+          <p>BUP graduates</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back Button -->
+  <div class="back-button">
+    <a href="index.html">Back to Home</a>
+  </div>
+</body>
+</html>

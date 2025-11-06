@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Signup Type | BUP Alumni Association</title>
+    <link rel="stylesheet" href="/bup-alumni-system/css/style.css">
+    <link rel="stylesheet" href="/bup-alumni-system/css/signup_select.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="signup-header">
+        <h1>BUP Alumni Association</h1>
+    </header>
+
+    <!-- Main Signup Selection Section -->
+    <section class="signup-select-container">
+        <div class="signup-select-box">
+            <h2>Join Our Community</h2>
+            <p class="subtitle">Select your account type to get started</p>
+            
+            <div class="signup-options">
+                <!-- Student Signup Option -->
+                <div class="signup-option" id="studentOption">
+                    <div class="option-icon">
+                       <div class="fallback-icon">🎓</div>
+                    </div>
+                    <h3>Sign Up as Student</h3>
+                    <p>Current BUP students pursuing their degrees</p>
+                    <div class="option-features">
+                        <span class="feature">• Connect with alumni</span>
+                        <span class="feature">• Find mentors</span>
+                        <span class="feature">• Career guidance</span>
+                    </div>
+                    <!-- Option 1: Direct href link -->
+                    <a href="student_signup.html" class="btn-select">Get Started</a>
+                </div>
+                
+                <!-- Alumni Signup Option -->
+                <div class="signup-option" id="alumniOption">
+                    <div class="option-icon">
+                        <div class="fallback-icon">👨‍🎓</div>
+                    </div>
+                    <h3>Sign Up as Alumni</h3>
+                    <p>BUP graduates building their careers</p>
+                    <div class="option-features">
+                        <span class="feature">• Network with peers</span>
+                        <span class="feature">• Mentor students</span>
+                        <span class="feature">• Career opportunities</span>
+                    </div>
+                    <!-- Option 1: Direct href link -->
+                    <a href="alumni_signup.html" class="btn-select">Join Now</a>
+                </div>
+            </div>
+            
+            <div class="login-redirect">
+                <p>Already have an account? <a href="login_select.html">Login here</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="index.html">Back to Home</a>
+    </div>
+
+    <script src="/bup-alumni-system/js/signup_select.js"></script>
+</body>
+</html>
