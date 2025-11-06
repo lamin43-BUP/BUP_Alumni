@@ -1,5 +1,5 @@
 # 🌟 BUP Alumni System
-![Homepage](resources\UI for Home page\homepage.png")
+![Homepage](resources/UI_for_Home_page/homepage.png)
 
 Team Name: BUP Alumni Devs  
 Developed by students of **Information and Communication Engineering, BUP**, focusing on connecting alumni, students, and the university through a centralized platform.
