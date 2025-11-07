@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank - BUP Alumni Association</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blood-bank.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="../images/bup-logo.png" alt="BUP Logo" class="logo">
+                    <div class="logo-text">
+                        <h1>Bangladesh University of Professionals</h1>
+                        <p>Alumni Association</p>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="../frontend/index.html" class="nav-link">Home</a></li>
+                        <li><a href="../events.html" class="nav-link">Events</a></li>
+                        <li><a href="blood-bank.html" class="nav-link active">Blood Bank</a></li>
+                        <li><a href="../frontend/login_select.html" class="nav-link">Login</a></li>
+                        <li><a href="../frontend/signup_select.html" class="btn-primary">Signup</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="blood-bank-main">
+        <!-- Blood Bank Hero Section -->
+        <section class="blood-bank-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">BUP Alumni Blood Bank</h1>
+                    <p class="hero-description">Save lives by donating blood and connecting donors with those in need. Join our life-saving community.</p>
+                    <button class="btn-donate-blood" id="donateBloodBtn">
+                        <i class="fas fa-tint"></i>
+                        Register as Donor
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blood Bank Stats Section -->
+        <section class="blood-bank-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-tint"></i>
+                        <div class="stat-info">
+                            <h3 id="totalDonors">156</h3>
+                            <p>Active Donors</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <div class="stat-info">
+                            <h3 id="totalDonations">423</h3>
+                            <p>Total Donations</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-hand-holding-heart"></i>
+                        <div class="stat-info">
+                            <h3 id="urgentRequests">12</h3>
+                            <p>Urgent Requests</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-life-ring"></i>
+                        <div class="stat-info">
+                            <h3 id="livesSaved">1,269</h3>
+                            <p>Lives Saved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blood Bank Actions Section -->
+        <section class="blood-bank-actions">
+            <div class="container">
+                <div class="actions-grid">
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Find Donors</h3>
+                        <p>Search for blood donors by blood type and location</p>
+                        <button class="btn-action" id="findDonorsBtn">Search Donors</button>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-hand-holding-medical"></i>
+                        </div>
+                        <h3>Request Blood</h3>
+                        <p>Submit urgent blood requests for patients in need</p>
+                        <button class="btn-action" id="requestBloodBtn">Make Request</button>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Blood Drives</h3>
+                        <p>View upcoming blood donation camps and events</p>
+                        <button class="btn-action" id="viewDrivesBtn">View Drives</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blood Bank Filter Section -->
+        <section class="blood-bank-filter">
+            <div class="container">
+                <div class="filter-content">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">All Donors</button>
+                        <button class="filter-tab" data-filter="available">Available Now</button>
+                        <button class="filter-tab" data-filter="recent">Recent Donors</button>
+                        <button class="filter-tab" data-filter="verified">Verified Donors</button>
+                    </div>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="donorSearch" placeholder="Search donors by name or location...">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blood Bank Grid Section -->
+        <section class="blood-bank-grid-section">
+            <div class="container">
+                <div class="blood-bank-grid" id="donorsContainer">
+                    <!-- Donors will be dynamically loaded here -->
+                </div>
+
+                <!-- Back Button -->
+                <div class="back-button">
+                    <a href="../frontend/index.html" class="btn-back">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/bup-logo.png" alt="BUP Logo" class="logo">
+                        <h3>BUP Alumni Association</h3>
+                    </div>
+                    <p class="footer-description">
+                        Connecting Bangladesh University of Professionals alumni worldwide to foster professional growth, networking, and lifelong learning.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                            LinkedIn
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                            Twitter
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../frontend/index.html">Home</a></li>
+                        <li><a href="../events.html">Events</a></li>
+                        <li><a href="blood-bank.html">Blood Bank</a></li>
+                        <li><a href="../frontend/login_select.html">Login</a></li>
+                        <li><a href="../frontend/signup_select.html">Signup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="../career-center.html">Career Center</a></li>
+                        <li><a href="../mentorship-program.html">Mentorship Program</a></li>
+                        <li><a href="../alumni-benefits.html">Alumni Benefits</a></li>
+                        <li><a href="../news.html">News & Updates</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p>Bangladesh University of Professionals</p>
+                        <p>Mirpur Cantonment, Dhaka-1216</p>
+                        <p>Bangladesh</p>
+                        <p>Email: alumni@bup.edu.bd</p>
+                        <p>Phone: +880 123 456 7890</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bangladesh University of Professionals Alumni Association. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donor Registration Modal -->
+    <div class="modal" id="donorRegistrationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Register as Blood Donor</h2>
+                <button class="close-modal" id="closeDonorModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="donorRegistrationForm" class="donor-form">
+                    <div class="form-group">
+                        <label for="donorName">Full Name</label>
+                        <input type="text" id="donorName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="donorBloodType">Blood Type</label>
+                            <select id="donorBloodType" required>
+                                <option value="">Select Blood Type</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="donorAge">Age</label>
+                            <input type="number" id="donorAge" min="18" max="65" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="donorLocation">Location</label>
+                        <input type="text" id="donorLocation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="donorPhone">Phone Number</label>
+                        <input type="tel" id="donorPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastDonation">Last Donation Date</label>
+                        <input type="date" id="lastDonation">
+                    </div>
+                    <div class="form-group">
+                        <label for="healthConditions">Health Conditions (if any)</label>
+                        <textarea id="healthConditions" rows="3"></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="availableNow" name="availableNow">
+                        <label for="availableNow">Available for immediate donation</label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel" id="cancelDonorRegistration">Cancel</button>
+                        <button type="submit" class="btn-submit">Register as Donor</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blood Request Modal -->
+    <div class="modal" id="bloodRequestModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Request Blood</h2>
+                <button class="close-modal" id="closeRequestModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="bloodRequestForm" class="blood-request-form">
+                    <div class="form-group">
+                        <label for="patientName">Patient Name</label>
+                        <input type="text" id="patientName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="requiredBloodType">Required Blood Type</label>
+                            <select id="requiredBloodType" required>
+                                <option value="">Select Blood Type</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="unitsRequired">Units Required</label>
+                            <input type="number" id="unitsRequired" min="1" max="10" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="hospitalName">Hospital Name</label>
+                        <input type="text" id="hospitalName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hospitalLocation">Hospital Location</label>
+                        <input type="text" id="hospitalLocation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="urgencyLevel">Urgency Level</label>
+                        <select id="urgencyLevel" required>
+                            <option value="normal">Normal</option>
+                            <option value="urgent">Urgent</option>
+                            <option value="critical">Critical</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="requiredDate">Required By Date</label>
+                        <input type="date" id="requiredDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPerson">Contact Person</label>
+                        <input type="text" id="contactPerson" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPhone">Contact Phone</label>
+                        <input type="tel" id="contactPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information</label>
+                        <textarea id="additionalInfo" rows="3"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel" id="cancelBloodRequest">Cancel</button>
+                        <button type="submit" class="btn-submit">Submit Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/blood-bank.js"></script>
+    <script>
+        // Mobile menu functionality
+        (function() {
+            'use strict';
+            
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle && navList) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navList.classList.toggle('active');
+                });
+            }
+            
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (navList.classList.contains('active')) {
+                        navList.classList.remove('active');
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
