@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Applications | BUP Alumni Association</title>
+
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/my-applications.css">
+  <li><a href="../mentorship-student-dashboard.html" class="nav-link active">Mentorship</a></li>
+
+</head>
+<body>
+  <!-- Header Include -->
+  <div id="header-placeholder"></div>
+
+  <main class="my-applications-wrapper">
+    <div class="container">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1>My Applications</h1>
+        <p class="page-subtitle">View and manage all your submitted mentorship applications.</p>
+      </div>
+
+      <!-- Applications Table Section -->
+      <section class="applications-section">
+        <div class="table-container">
+          <table class="applications-table">
+            <thead>
+              <tr>
+                <th>Offer Title</th>
+                <th>Mentor Name</th>
+                <th>Message</th>
+                <th>Status</th>
+                <th>Applied Date</th>
+              </tr>
+            </thead>
+            <tbody id="applications-body">
+              <!-- Example rows for frontend demo -->
+              <tr>
+                <td>Career Guidance in Data Science</td>
+                <td>Dr. Rahman</td>
+                <td>Looking forward to learning about data analysis…</td>
+                <td><span class="status pending">Pending</span></td>
+                <td>2025-10-01</td>
+              </tr>
+              <tr>
+                <td>Leadership and Communication</td>
+                <td>Ms. Farzana</td>
+                <td>I have prior experience in organizing events…</td>
+                <td><span class="status approved">Approved</span></td>
+                <td>2025-09-28</td>
+              </tr>
+              <tr>
+                <td>Business Strategy Mentorship</td>
+                <td>Mr. Karim</td>
+                <td>Excited to learn strategic business planning…</td>
+                <td><span class="status rejected">Rejected</span></td>
+                <td>2025-09-25</td>
+              </tr>
+              <tr>
+                <td>Business Strategy Mentorship</td>
+                <td>Mr. Karim</td>
+                <td>Excited to learn strategic business planning…</td>
+                <td><span class="status rejected">Rejected</span></td>
+                <td>2025-09-25</td>
+              </tr>
+              <tr>
+                <td>Business Strategy Mentorship</td>
+                <td>Mr. Karim</td>
+                <td>Excited to learn strategic business planning…</td>
+                <td><span class="status approved">approved</span></td>
+                <td>2025-09-25</td>
+              </tr>
+              <tr>
+                <td>Business Strategy Mentorship</td>
+                <td>Mr. Karim</td>
+                <td>Excited to learn strategic business planning…</td>
+                <td><span class="status rejected">Rejected</span></td>
+                <td>2025-09-25</td>
+              </tr>
+              <tr>
+                <td>Business Strategy Mentorship</td>
+                <td>Mr. Karim</td>
+                <td>Excited to learn strategic business planning…</td>
+                <td><span class="status approved">approved</span></td>
+                <td>2025-09-25</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer Include -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Load header and footer
+      fetch('../includes/header.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data)
+        .catch(err => console.error('Header load error:', err));
+
+      fetch('../includes/footer.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data)
+        .catch(err => console.error('Footer load error:', err));
+    });
+  </script>
+</body>
+</html>

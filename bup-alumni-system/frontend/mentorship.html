@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship Dashboard | BUP Alumni Association</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/style.css"> <!-- keep header/footer styles -->
+    <link rel="stylesheet" href="../css/mentorship-dashboard.css"> <!-- dashboard-specific fixes -->
+</head>
+<body>
+    <!-- Header Include -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Dashboard Wrapper -->
+    <main class="mentorship-wrapper">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Mentorship Dashboard</h1>
+                <p class="page-subtitle">
+                    Manage your mentorship offers, student applications, and scheduled sessions.
+                </p>
+            </div>
+
+            <!-- Quick Action Cards -->
+            <section class="quick-actions">
+                
+                <div class="card">
+                    <h3>My Offers</h3>
+                    <p>View and manage your mentorship offers.</p>
+                    <a href="my-offer.html" class="btn-primary">View Offers</a>
+                </div>
+                <div class="card">
+                    <h3>Create New Offer</h3>
+                    <p>Share your expertise by creating a new mentorship offer.</p>
+                    <a href="create-offer.html" class="btn-primary">Create Offer</a>
+                </div>
+                <div class="card">
+                    <h3>Upcoming Sessions</h3>
+                    <p>View your scheduled mentorship sessions and join meetings.</p>
+                    <a href="upcoming-sessions.html" class="btn-primary">View Sessions</a>
+                </div>
+            </section>
+
+            <!-- Recent Applications Table -->
+            <section class="recent-applications">
+                <h2>Recent Student Applications</h2>
+                <table class="applications-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Offer Title</th>
+                            <th>Status</th>
+                            <th>Applied At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jane Doe</td>
+                            <td>Data Analytics Guidance</td>
+                            <td>Pending</td>
+                            <td>2025-11-05</td>
+                            <td>
+                                <a href="applications.html?offer_id=1" class="btn-secondary">View</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>John Smith</td>
+                            <td>Career Mentorship in Marketing</td>
+                            <td>Approved</td>
+                            <td>2025-11-04</td>
+                            <td>
+                                <a href="applications.html?offer_id=2" class="btn-secondary">View</a>
+                            </td>
+                        </tr>
+                        <!-- More rows can be dynamically inserted -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer Include -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Load header
+            fetch('../includes/header.html')
+                .then(res => res.text())
+                .then(data => document.getElementById('header-placeholder').innerHTML = data)
+                .catch(err => console.error('Header load error:', err));
+
+            // Load footer
+            fetch('../includes/footer.html')
+                .then(res => res.text())
+                .then(data => document.getElementById('footer-placeholder').innerHTML = data)
+                .catch(err => console.error('Footer load error:', err));
+        });
+    </script>
+</body>
+</html>

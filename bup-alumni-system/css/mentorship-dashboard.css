@@ -1,0 +1,176 @@
+/* Mentorship Dashboard Specific CSS Fixes */
+
+/* Main Wrapper */
+.mentorship-wrapper {
+    padding-top: 100px; /* prevent header overlap */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b); /* keep dark theme */
+    position: relative;
+    z-index: 1;
+}
+
+/* Page Header */
+.page-header h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: #cbd5e1;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Quick Action Cards */
+.quick-actions {
+    display: flex;
+    flex-wrap: nowrap;       /* allow cards to wrap instead of overlap */
+    gap: 2rem;
+    margin-bottom: 3rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.quick-actions .card {
+    flex: 1 1 280px;       /* fixed width to prevent overlap */
+    max-width: 320px;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;    /* prevent absolute overlap */
+    z-index: 1;
+    
+    /* Add continuous floating animation */
+    animation: float 6s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Different animation delays for each card to create wave effect */
+.quick-actions .card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.quick-actions .card:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.quick-actions .card:nth-child(3) {
+    animation-delay: 4s;
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    33% {
+        transform: translateY(-8px) translateX(3px);
+    }
+    66% {
+        transform: translateY(4px) translateX(-3px);
+    }
+}
+
+/* Enhanced hover effect */
+.quick-actions .card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 12px 24px -1px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.quick-actions .card h3 {
+    color: #3b82f6;
+    margin-bottom: 0.8rem;
+}
+
+.quick-actions .card p {
+    color: #f8fafc;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Recent Applications Table */
+.recent-applications {
+    width: 100%;
+    clear: both;           /* force below cards */
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    position: relative;
+    z-index: 1;
+}
+
+.applications-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.applications-table th,
+.applications-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #334155;
+    text-align: left;
+    color: #f8fafc;
+}
+.recent-applications h2 {
+    color: #f8fafc;   /* change to your desired color */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.applications-table th {
+    background-color: #0f172a;
+    font-weight: 600;
+}
+
+.applications-table tr:hover {
+    background-color: #334155;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .quick-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quick-actions .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        /* Reduce animation intensity on mobile */
+        animation: float-mobile 6s ease-in-out infinite;
+    }
+
+    /* More subtle floating for mobile */
+    @keyframes float-mobile {
+        0%, 100% {
+            transform: translateY(0) translateX(0);
+        }
+        33% {
+            transform: translateY(-5px) translateX(2px);
+        }
+        66% {
+            transform: translateY(2px) translateX(-2px);
+        }
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .applications-table th, .applications-table td {
+        font-size: 0.9rem;
+    }
+}
