@@ -26,7 +26,11 @@
 /* Alumni Directory Main */
 .alumni-directory-main {
     padding: 3rem 0;
+<<<<<<< HEAD
+    background: linear-gradient(135deg, var(--light-gray) 0%, #e2e8f0 100%);
+=======
     background-color: var(--light-gray);
+>>>>>>> origin/main
     min-height: 80vh;
 }
 
@@ -40,11 +44,19 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+<<<<<<< HEAD
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+=======
+>>>>>>> origin/main
 }
 
 .page-subtitle {
     color: var(--dark-gray);
     font-size: 1.1rem;
+<<<<<<< HEAD
+    font-weight: 500;
+=======
+>>>>>>> origin/main
 }
 
 /* Filters Section */
@@ -54,6 +66,10 @@
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     margin-bottom: 2rem;
+<<<<<<< HEAD
+    border: 1px solid var(--medium-gray);
+=======
+>>>>>>> origin/main
 }
 
 .filters-grid {
@@ -88,7 +104,11 @@
 .filter-input:focus, .filter-select:focus {
     outline: none;
     border-color: var(--accent-blue);
+<<<<<<< HEAD
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+=======
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+>>>>>>> origin/main
 }
 
 .filter-input::placeholder {
@@ -111,6 +131,45 @@
     transition: all 0.3s ease;
     border: none;
     font-family: inherit;
+<<<<<<< HEAD
+    min-width: 120px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #2563eb 100%);
+    color: var(--white);
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #2563eb 100%);
+    color: var(--white);
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+}
+
+/* Click effect for buttons */
+.btn-primary.clicked, .btn-secondary.clicked, .view-profile-btn.clicked {
+    transform: scale(0.95);
+=======
 }
 
 .btn-primary {
@@ -132,6 +191,7 @@
 .btn-secondary:hover {
     background-color: var(--medium-gray);
     transform: translateY(-2px);
+>>>>>>> origin/main
 }
 
 .btn-text {
@@ -142,10 +202,18 @@
     font-size: 0.9rem;
     text-decoration: underline;
     font-family: inherit;
+<<<<<<< HEAD
+    font-weight: 600;
+}
+
+.btn-text:hover {
+    color: #2563eb;
+=======
 }
 
 .btn-text:hover {
     color: #60a5fa;
+>>>>>>> origin/main
 }
 
 /* Loading and Error States */
@@ -175,7 +243,11 @@
 }
 
 .error-message {
+<<<<<<< HEAD
+    background: linear-gradient(135deg, rgba(248, 113, 113, 0.1) 0%, rgba(254, 226, 226, 0.1) 100%);
+=======
     background-color: rgba(248, 113, 113, 0.1);
+>>>>>>> origin/main
     border: 1px solid rgba(248, 113, 113, 0.3);
     border-radius: var(--border-radius);
     padding: 1.5rem;
@@ -183,6 +255,10 @@
     text-align: center;
     display: none;
     margin-bottom: 2rem;
+<<<<<<< HEAD
+    box-shadow: var(--shadow);
+=======
+>>>>>>> origin/main
 }
 
 .error-message.show {
@@ -194,6 +270,13 @@
     padding: 3rem;
     color: var(--dark-gray);
     display: none;
+<<<<<<< HEAD
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin: 2rem 0;
+=======
+>>>>>>> origin/main
 }
 
 .no-results-message.show {
@@ -206,6 +289,10 @@
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+<<<<<<< HEAD
+    border: 1px solid var(--medium-gray);
+=======
+>>>>>>> origin/main
 }
 
 .alumni-stats {
@@ -214,6 +301,19 @@
     align-items: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
+<<<<<<< HEAD
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.alumni-count {
+    font-weight: 700;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+=======
     border-bottom: 1px solid var(--light-gray);
 }
 
@@ -230,6 +330,7 @@
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
+>>>>>>> origin/main
 }
 
 .alumni-grid {
@@ -239,13 +340,43 @@
 }
 
 .alumni-card {
+<<<<<<< HEAD
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+=======
     background-color: var(--white);
+>>>>>>> origin/main
     border: 1px solid var(--light-gray);
     border-radius: var(--border-radius);
     padding: 1.5rem;
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
+<<<<<<< HEAD
+    box-shadow: var(--shadow);
+}
+
+.alumni-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-blue);
+}
+
+.alumni-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.alumni-basic-info {
+    text-align: center;
+}
+
+.alumni-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+=======
 }
 
 .alumni-card:hover {
@@ -295,17 +426,47 @@
     font-weight: 600;
     color: var(--primary-blue);
     margin-bottom: 0.25rem;
+>>>>>>> origin/main
 }
 
 .alumni-dept {
     color: var(--accent-blue);
+<<<<<<< HEAD
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+=======
     font-weight: 500;
     margin-bottom: 0.25rem;
     font-size: 0.9rem;
+>>>>>>> origin/main
 }
 
 .alumni-batch {
     color: var(--dark-gray);
+<<<<<<< HEAD
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.view-profile-btn {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, #2563eb 100%);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+.view-profile-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+=======
     font-size: 0.85rem;
 }
 
@@ -371,6 +532,7 @@
 
 .view-profile-btn:hover {
     background-color: #2563eb;
+>>>>>>> origin/main
 }
 
 /* Modal Styles */
@@ -396,11 +558,19 @@
     background-color: var(--white);
     border-radius: var(--border-radius);
     width: 100%;
+<<<<<<< HEAD
+    max-width: 700px;
+=======
     max-width: 600px;
+>>>>>>> origin/main
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: var(--shadow);
     position: relative;
+<<<<<<< HEAD
+    border: 1px solid var(--medium-gray);
+=======
+>>>>>>> origin/main
 }
 
 .modal-close {
@@ -410,6 +580,48 @@
     background: none;
     border: none;
     font-size: 1.5rem;
+<<<<<<< HEAD
+    color: var(--white);
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-close:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: var(--white);
+    padding: 2.5rem 2rem 1.5rem;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    text-align: center;
+    position: relative;
+}
+
+.modal-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-blue) 0%, transparent 100%);
+}
+
+.modal-name {
+    color: var(--white);
+    font-size: 1.8rem;
+=======
     color: var(--dark-gray);
     cursor: pointer;
     z-index: 10;
@@ -435,11 +647,28 @@
 .modal-name {
     color: var(--primary-blue);
     font-size: 1.5rem;
+>>>>>>> origin/main
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .modal-dept {
+<<<<<<< HEAD
+    color: var(--light-gray);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.modal-batch {
+    color: var(--medium-gray);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.modal-body {
+    padding: 2rem;
+=======
     color: var(--accent-blue);
     font-weight: 600;
     margin-bottom: 0.25rem;
@@ -452,22 +681,42 @@
 
 .modal-body {
     padding: 1.5rem 2rem 2rem;
+>>>>>>> origin/main
 }
 
 .info-section {
     margin-bottom: 2rem;
+<<<<<<< HEAD
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #e2e8f0 100%);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-blue);
+=======
+>>>>>>> origin/main
 }
 
 .info-section h3 {
     color: var(--primary-blue);
+<<<<<<< HEAD
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-blue);
+=======
     font-size: 1.1rem;
     margin-bottom: 1rem;
     font-weight: 600;
+>>>>>>> origin/main
 }
 
 .info-grid {
     display: grid;
+<<<<<<< HEAD
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+=======
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+>>>>>>> origin/main
     gap: 1rem;
 }
 
@@ -478,6 +727,22 @@
 }
 
 .info-item strong {
+<<<<<<< HEAD
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.info-value {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+
+
+
+/* Social Links Section - Simple Icon Only */
+=======
     color: var(--dark-gray);
     font-size: 0.9rem;
     font-weight: 500;
@@ -488,15 +753,209 @@
     font-weight: 500;
 }
 
+>>>>>>> origin/main
 .social-links {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+<<<<<<< HEAD
+    justify-content: center;
+=======
+>>>>>>> origin/main
 }
 
 .social-link {
     display: inline-flex;
     align-items: center;
+<<<<<<< HEAD
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid var(--accent-blue);
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.social-link:hover {
+    background: var(--accent-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Facebook icon */
+.social-link[href*="facebook"]::before {
+    content: "f";
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-blue);
+    font-family: Arial, sans-serif;
+}
+
+.social-link[href*="facebook"]:hover::before {
+    color: var(--white);
+}
+
+/* LinkedIn icon */
+.social-link[href*="linkedin"]::before {
+    content: "in";
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--accent-blue);
+    font-family: Arial, sans-serif;
+}
+
+.social-link[href*="linkedin"]:hover::before {
+    color: var(--white);
+}
+
+/* Remove all text content */
+.social-link::after {
+    display: none;
+}
+
+.no-social-links {
+    color: var(--dark-gray);
+    font-style: italic;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    border: 1px dashed var(--medium-gray);
+    font-weight: 500;
+    width: 100%;
+}
+
+/* Ensure social section matches others */
+.info-section:has(.social-links) {
+    background: linear-gradient(135deg, var(--light-gray) 0%, #e2e8f0 100%);
+    border-left: 4px solid var(--accent-blue);
+    padding: 1.5rem;
+    margin-bottom: 0;
+}
+
+.info-section:has(.social-links) h3 {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+
+/* Social Links Section - Visible Icons */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid var(--accent-blue);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    padding: 0;
+}
+
+.social-link:hover {
+    background: var(--accent-blue);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+}
+
+/* Facebook specific styling */
+.social-link.facebook {
+    border-color: #1877f2;
+}
+
+.social-link.facebook:hover {
+    background: #1877f2;
+    border-color: #1877f2;
+}
+
+/* LinkedIn specific styling */
+.social-link.linkedin {
+    border-color: #0077b5;
+}
+
+.social-link.linkedin:hover {
+    background: #0077b5;
+    border-color: #0077b5;
+}
+
+/* SVG icons - blue by default, white on hover */
+.social-link svg {
+    width: 24px;
+    height: 24px;
+    color: var(--accent-blue);
+    transition: color 0.3s ease;
+}
+
+.social-link.facebook svg {
+    color: #1877f2;
+}
+
+.social-link.linkedin svg {
+    color: #0077b5;
+}
+
+.social-link:hover svg {
+    color: var(--white);
+}
+
+/* Remove any text content */
+.social-link::after,
+.social-link::before {
+    display: none;
+}
+
+.no-social-links {
+    color: var(--dark-gray);
+    font-style: italic;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--light-gray);
+    border-radius: var(--border-radius);
+    border: 1px dashed var(--medium-gray);
+    font-weight: 500;
+    width: 100%;
+}
+
+/* Ensure social section matches others */
+.info-section:has(.social-links) {
+    background: linear-gradient(135deg, var(--light-gray) 0%, #e2e8f0 100%);
+    border-left: 4px solid var(--accent-blue);
+    padding: 1.5rem;
+    margin-bottom: 0;
+}
+
+.info-section:has(.social-links) h3 {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+
+
+
+=======
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     background-color: var(--light-gray);
@@ -522,6 +981,7 @@
     border-top: 1px solid var(--light-gray);
 }
 
+>>>>>>> origin/main
 /* Responsive Design */
 @media (max-width: 768px) {
     .filters-grid {
@@ -547,18 +1007,36 @@
         align-items: flex-start;
     }
     
+<<<<<<< HEAD
+    .modal-content {
+        margin: 1rem;
+    }
+    
+    .modal-header {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+=======
     .modal-header {
         flex-direction: column;
         text-align: center;
         align-items: center;
+>>>>>>> origin/main
     }
     
     .info-grid {
         grid-template-columns: 1fr;
     }
     
+<<<<<<< HEAD
+    .info-section {
+        padding: 1.2rem;
+=======
     .modal-actions {
         flex-direction: column;
+>>>>>>> origin/main
     }
 }
 
@@ -572,6 +1050,19 @@
         padding: 1.5rem;
     }
     
+<<<<<<< HEAD
+    .modal-header {
+        padding: 1.5rem 1rem 1rem;
+    }
+    
+    .modal-name {
+        font-size: 1.5rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        min-width: auto;
+        padding: 0.8rem 1.2rem;
+=======
     .modal-content {
         margin: 1rem;
     }
@@ -579,5 +1070,6 @@
     .modal-header,
     .modal-body {
         padding: 1.5rem;
+>>>>>>> origin/main
     }
 }
