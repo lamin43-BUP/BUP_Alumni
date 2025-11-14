@@ -159,6 +159,7 @@ input, select, textarea {
     font-family: inherit;
 }
 
+<<<<<<< HEAD
 /* FIXED: Dropdown styling for better visibility */
 select {
     appearance: none;
@@ -179,6 +180,8 @@ select:focus {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
 }
 
+=======
+>>>>>>> origin/main
 input::placeholder, textarea::placeholder {
     color: var(--medium-gray);
 }
@@ -313,8 +316,88 @@ textarea {
     color: var(--white) !important;
 }
 
+<<<<<<< HEAD
 
 
+=======
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--secondary-blue);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--light-blue);
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family: inherit;
+}
+
+.modal-close:hover {
+    color: var(--accent-blue);
+}
+
+.modal-content h2 {
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.modal-content p {
+    color: var(--medium-gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.modal-content input {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.otp-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.otp-timer {
+    color: var(--medium-gray);
+    font-size: 0.9rem;
+}
+>>>>>>> origin/main
 
 .error-message {
     color: #8aacd1;
@@ -398,6 +481,7 @@ input:valid, select:valid, textarea:valid {
         font-size: 1.5rem;
     }
     
+<<<<<<< HEAD
 
 }
 
@@ -421,4 +505,9 @@ input:valid {
 :root {
     --error-color: #dc2626;
     --success-color: #16a34a;
+=======
+    .modal-content {
+        padding: 1.5rem;
+    }
+>>>>>>> origin/main
 }

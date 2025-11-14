@@ -26,7 +26,11 @@
 /* Alumni Directory Main */
 .alumni-directory-main {
     padding: 3rem 0;
+<<<<<<< HEAD
     background: linear-gradient(135deg, var(--light-gray) 0%, #e2e8f0 100%);
+=======
+    background-color: var(--light-gray);
+>>>>>>> origin/main
     min-height: 80vh;
 }
 
@@ -40,13 +44,19 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+<<<<<<< HEAD
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+=======
+>>>>>>> origin/main
 }
 
 .page-subtitle {
     color: var(--dark-gray);
     font-size: 1.1rem;
+<<<<<<< HEAD
     font-weight: 500;
+=======
+>>>>>>> origin/main
 }
 
 /* Filters Section */
@@ -56,7 +66,10 @@
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     margin-bottom: 2rem;
+<<<<<<< HEAD
     border: 1px solid var(--medium-gray);
+=======
+>>>>>>> origin/main
 }
 
 .filters-grid {
@@ -91,7 +104,11 @@
 .filter-input:focus, .filter-select:focus {
     outline: none;
     border-color: var(--accent-blue);
+<<<<<<< HEAD
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+=======
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+>>>>>>> origin/main
 }
 
 .filter-input::placeholder {
@@ -114,6 +131,7 @@
     transition: all 0.3s ease;
     border: none;
     font-family: inherit;
+<<<<<<< HEAD
     min-width: 120px;
 }
 
@@ -151,6 +169,29 @@
 /* Click effect for buttons */
 .btn-primary.clicked, .btn-secondary.clicked, .view-profile-btn.clicked {
     transform: scale(0.95);
+=======
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--light-gray);
+    color: var(--primary-blue);
+    border: 1px solid var(--medium-gray);
+}
+
+.btn-secondary:hover {
+    background-color: var(--medium-gray);
+    transform: translateY(-2px);
+>>>>>>> origin/main
 }
 
 .btn-text {
@@ -161,11 +202,18 @@
     font-size: 0.9rem;
     text-decoration: underline;
     font-family: inherit;
+<<<<<<< HEAD
     font-weight: 600;
 }
 
 .btn-text:hover {
     color: #2563eb;
+=======
+}
+
+.btn-text:hover {
+    color: #60a5fa;
+>>>>>>> origin/main
 }
 
 /* Loading and Error States */
@@ -195,7 +243,11 @@
 }
 
 .error-message {
+<<<<<<< HEAD
     background: linear-gradient(135deg, rgba(248, 113, 113, 0.1) 0%, rgba(254, 226, 226, 0.1) 100%);
+=======
+    background-color: rgba(248, 113, 113, 0.1);
+>>>>>>> origin/main
     border: 1px solid rgba(248, 113, 113, 0.3);
     border-radius: var(--border-radius);
     padding: 1.5rem;
@@ -203,7 +255,10 @@
     text-align: center;
     display: none;
     margin-bottom: 2rem;
+<<<<<<< HEAD
     box-shadow: var(--shadow);
+=======
+>>>>>>> origin/main
 }
 
 .error-message.show {
@@ -215,10 +270,13 @@
     padding: 3rem;
     color: var(--dark-gray);
     display: none;
+<<<<<<< HEAD
     background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     margin: 2rem 0;
+=======
+>>>>>>> origin/main
 }
 
 .no-results-message.show {
@@ -231,7 +289,10 @@
     padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+<<<<<<< HEAD
     border: 1px solid var(--medium-gray);
+=======
+>>>>>>> origin/main
 }
 
 .alumni-stats {
@@ -240,6 +301,7 @@
     align-items: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
+<<<<<<< HEAD
     border-bottom: 2px solid var(--light-gray);
 }
 
@@ -251,6 +313,24 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+=======
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.alumni-count {
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+}
+
+.verified-badge {
+    background-color: var(--success-color);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+>>>>>>> origin/main
 }
 
 .alumni-grid {
@@ -260,13 +340,18 @@
 }
 
 .alumni-card {
+<<<<<<< HEAD
     background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+=======
+    background-color: var(--white);
+>>>>>>> origin/main
     border: 1px solid var(--light-gray);
     border-radius: var(--border-radius);
     padding: 1.5rem;
     transition: all 0.3s ease;
     cursor: pointer;
     position: relative;
+<<<<<<< HEAD
     box-shadow: var(--shadow);
 }
 
@@ -291,17 +376,75 @@
     font-weight: 700;
     color: var(--primary-blue);
     margin-bottom: 0.5rem;
+=======
+}
+
+.alumni-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent-blue);
+}
+
+.alumni-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.alumni-avatar {
+    position: relative;
+}
+
+.avatar-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-blue);
+}
+
+.avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    border: 2px solid var(--accent-blue);
+}
+
+.alumni-basic-info {
+    flex: 1;
+}
+
+.alumni-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 0.25rem;
+>>>>>>> origin/main
 }
 
 .alumni-dept {
     color: var(--accent-blue);
+<<<<<<< HEAD
     font-weight: 600;
     margin-bottom: 0.25rem;
     font-size: 1rem;
+=======
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+>>>>>>> origin/main
 }
 
 .alumni-batch {
     color: var(--dark-gray);
+<<<<<<< HEAD
     font-size: 0.9rem;
     font-weight: 500;
 }
@@ -323,6 +466,73 @@
 .view-profile-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+=======
+    font-size: 0.85rem;
+}
+
+.alumni-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.alumni-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.info-label {
+    font-size: 0.8rem;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+.info-value {
+    font-size: 0.9rem;
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+
+.alumni-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bookmark-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.bookmark-btn:hover {
+    background-color: var(--light-gray);
+}
+
+.bookmark-btn.bookmarked {
+    color: var(--warning-color);
+}
+
+.view-profile-btn {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-profile-btn:hover {
+    background-color: #2563eb;
+>>>>>>> origin/main
 }
 
 /* Modal Styles */
@@ -348,12 +558,19 @@
     background-color: var(--white);
     border-radius: var(--border-radius);
     width: 100%;
+<<<<<<< HEAD
     max-width: 700px;
+=======
+    max-width: 600px;
+>>>>>>> origin/main
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: var(--shadow);
     position: relative;
+<<<<<<< HEAD
     border: 1px solid var(--medium-gray);
+=======
+>>>>>>> origin/main
 }
 
 .modal-close {
@@ -363,6 +580,7 @@
     background: none;
     border: none;
     font-size: 1.5rem;
+<<<<<<< HEAD
     color: var(--white);
     cursor: pointer;
     z-index: 10;
@@ -403,11 +621,39 @@
 .modal-name {
     color: var(--white);
     font-size: 1.8rem;
+=======
+    color: var(--dark-gray);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-close:hover {
+    color: var(--primary-blue);
+}
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.modal-header .alumni-avatar .avatar-image {
+    width: 80px;
+    height: 80px;
+}
+
+.modal-name {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+>>>>>>> origin/main
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .modal-dept {
+<<<<<<< HEAD
     color: var(--light-gray);
     font-weight: 600;
     margin-bottom: 0.25rem;
@@ -422,28 +668,55 @@
 
 .modal-body {
     padding: 2rem;
+=======
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.modal-batch {
+    color: var(--dark-gray);
+    font-size: 0.95rem;
+}
+
+.modal-body {
+    padding: 1.5rem 2rem 2rem;
+>>>>>>> origin/main
 }
 
 .info-section {
     margin-bottom: 2rem;
+<<<<<<< HEAD
     padding: 1.5rem;
     background: linear-gradient(135deg, var(--light-gray) 0%, #e2e8f0 100%);
     border-radius: var(--border-radius);
     border-left: 4px solid var(--accent-blue);
+=======
+>>>>>>> origin/main
 }
 
 .info-section h3 {
     color: var(--primary-blue);
+<<<<<<< HEAD
     font-size: 1.2rem;
     margin-bottom: 1rem;
     font-weight: 700;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--accent-blue);
+=======
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+>>>>>>> origin/main
 }
 
 .info-grid {
     display: grid;
+<<<<<<< HEAD
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+=======
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+>>>>>>> origin/main
     gap: 1rem;
 }
 
@@ -454,6 +727,7 @@
 }
 
 .info-item strong {
+<<<<<<< HEAD
     color: var(--primary-blue);
     font-size: 0.9rem;
     font-weight: 600;
@@ -468,16 +742,32 @@
 
 
 /* Social Links Section - Simple Icon Only */
+=======
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.info-value {
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+
+>>>>>>> origin/main
 .social-links {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+<<<<<<< HEAD
     justify-content: center;
+=======
+>>>>>>> origin/main
 }
 
 .social-link {
     display: inline-flex;
     align-items: center;
+<<<<<<< HEAD
     justify-content: center;
     width: 50px;
     height: 50px;
@@ -665,6 +955,33 @@
 
 
 
+=======
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--light-gray);
+    color: var(--primary-blue);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.social-link:hover {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--light-gray);
+}
+
+>>>>>>> origin/main
 /* Responsive Design */
 @media (max-width: 768px) {
     .filters-grid {
@@ -690,6 +1007,7 @@
         align-items: flex-start;
     }
     
+<<<<<<< HEAD
     .modal-content {
         margin: 1rem;
     }
@@ -700,14 +1018,25 @@
     
     .modal-body {
         padding: 1.5rem;
+=======
+    .modal-header {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+>>>>>>> origin/main
     }
     
     .info-grid {
         grid-template-columns: 1fr;
     }
     
+<<<<<<< HEAD
     .info-section {
         padding: 1.2rem;
+=======
+    .modal-actions {
+        flex-direction: column;
+>>>>>>> origin/main
     }
 }
 
@@ -721,6 +1050,7 @@
         padding: 1.5rem;
     }
     
+<<<<<<< HEAD
     .modal-header {
         padding: 1.5rem 1rem 1rem;
     }
@@ -732,5 +1062,14 @@
     .btn-primary, .btn-secondary {
         min-width: auto;
         padding: 0.8rem 1.2rem;
+=======
+    .modal-content {
+        margin: 1rem;
+    }
+    
+    .modal-header,
+    .modal-body {
+        padding: 1.5rem;
+>>>>>>> origin/main
     }
 }

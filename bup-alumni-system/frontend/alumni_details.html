@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Directory | BUP Alumni Association</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/alumni_details.css">
+=======
+    <link rel="stylesheet" href="/bup-alumni-system/css/style.css">
+    <link rel="stylesheet" href="/bup-alumni-system/css/alumni_details.css">
+>>>>>>> origin/main
 </head>
 <body>
     <!-- Header Include -->
@@ -27,6 +32,7 @@
                     </div>
                     
                     <div class="filter-group">
+<<<<<<< HEAD
     <label for="filterDept" class="filter-label">Department</label>
     <select id="filterDept" class="filter-select">
         <option value="">All Departments</option>
@@ -53,6 +59,22 @@
         <option value="Department of Public Health">Department of Public Health</option>
     </select>
 </div>
+=======
+                        <label for="filterDept" class="filter-label">Department</label>
+                        <select id="filterDept" class="filter-select">
+                            <option value="">All Departments</option>
+                            <option value="Business Administration - General">Business Administration - General</option>
+                            <option value="Department of Computer Science and Engineering">Department of Computer Science and Engineering</option>
+                            <option value="Department of Economics">Department of Economics</option>
+                            <option value="Department of International Relations">Department of International Relations</option>
+                            <option value="Department of Information and Communication Technology">Department of Information and Communication Technology</option>
+                            <option value="Mass Communication and Journalism">Mass Communication and Journalism</option>
+                            <option value="Business Administration - Marketing">Business Administration - Marketing</option>
+                            <option value="Department of Law">Department of Law</option>
+                            <option value="Department of Environmental Science">Department of Environmental Science</option>
+                        </select>
+                    </div>
+>>>>>>> origin/main
                     
                     <div class="filter-group">
                         <label for="filterBatch" class="filter-label">Batch</label>
@@ -96,6 +118,7 @@
                 <button type="button" id="resetSearch" class="btn-text">Reset search and filters</button>
             </div>
 
+<<<<<<< HEAD
 
             <!-- Alumni Grid Section -->
 <section class="alumni-grid-section">
@@ -113,18 +136,47 @@
     </main>
 
     
+=======
+            <!-- Alumni Grid -->
+            <section class="alumni-grid-section">
+                <div class="alumni-stats">
+                    <span id="alumniCount" class="alumni-count">Loading...</span>
+                    <span class="verified-badge">✓ Verified Profiles Only</span>
+                </div>
+                
+                <div class="alumni-grid" id="alumniGrid" role="list" aria-label="Alumni directory">
+                    <!-- Alumni cards will be dynamically inserted here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+>>>>>>> origin/main
     <!-- Alumni Detail Modal -->
     <div id="alumniModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalName" aria-describedby="modalBio">
         <div class="modal-content">
             <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
             
             <div class="modal-header">
+<<<<<<< HEAD
     <div class="alumni-basic-info">
         <h2 id="modalName" class="modal-name"></h2>
         <p id="modalDept" class="modal-dept"></p>
         <p id="modalBatch" class="modal-batch"></p>
     </div>
 </div>
+=======
+                <div class="alumni-avatar">
+                    <img id="modalAvatar" src="" alt="" class="avatar-image">
+                    <div class="verified-badge">Verified</div>
+                </div>
+                <div class="alumni-basic-info">
+                    <h2 id="modalName" class="modal-name"></h2>
+                    <p id="modalDept" class="modal-dept"></p>
+                    <p id="modalBatch" class="modal-batch"></p>
+                </div>
+            </div>
+>>>>>>> origin/main
 
             <div class="modal-body">
                 <div class="info-section">
@@ -182,6 +234,7 @@
                 </div>
 
                 <div class="info-section">
+<<<<<<< HEAD
     <h3>Social Profiles</h3>
     <div class="social-links" id="modalSocials">
         <!-- Social links will be dynamically inserted here -->
@@ -204,6 +257,21 @@
 </div>
 
                 
+=======
+                    <h3>Social Profiles</h3>
+                    <div class="social-links" id="modalSocials">
+                        <!-- Social links will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="bookmarkProfile" class="btn-secondary">
+                        <span class="bookmark-icon">🔖</span>
+                        Bookmark Profile
+                    </button>
+                    <button type="button" id="closeModal" class="btn-primary">Close</button>
+                </div>
+>>>>>>> origin/main
             </div>
         </div>
     </div>
@@ -211,14 +279,22 @@
     <!-- Footer Include -->
     <div id="footer-placeholder"></div>
 
+<<<<<<< HEAD
     <script src="/js/alumni_details.js"></script>
+=======
+    <script src="/bup-alumni-system/js/alumni_details.js"></script>
+>>>>>>> origin/main
     
     <!-- Include Header and Footer -->
     <script>
         // Function to load HTML includes
         function loadHTMLIncludes() {
             // Load header
+<<<<<<< HEAD
             fetch('/includes/header.html')
+=======
+            fetch('/bup-alumni-system/includes/header.html')
+>>>>>>> origin/main
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('header-placeholder').innerHTML = data;
@@ -226,7 +302,11 @@
                 .catch(error => console.error('Error loading header:', error));
 
             // Load footer
+<<<<<<< HEAD
             fetch('/includes/footer.html')
+=======
+            fetch('/bup-alumni-system/includes/footer.html')
+>>>>>>> origin/main
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('footer-placeholder').innerHTML = data;
