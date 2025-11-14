@@ -1,0 +1,424 @@
+/*!
+ * BUP Alumni System - Signup Page Styles
+ * Following Coding Standards and Design Pattern
+ */
+
+/* CSS Variables for Darker Professional Theme */
+:root {
+    --primary-blue: #0f172a;
+    --secondary-blue: #1e293b;
+    --accent-blue: #3b82f6;
+    --light-blue: #334155;
+    --dark-blue: #020617;
+    --white: #ffffff;
+    --light-gray: #f1f5f9;
+    --medium-gray: #cbd5e1;
+    --dark-gray: #64748b;
+    --text-dark: #0f172a;
+    --text-light: #f8fafc;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --border-radius: 8px;
+    --error-color: #f87171;
+    --success-color: #4ade80;
+}
+
+/* Page Background */
+body {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+.signup-header {
+    background-color: var(--primary-blue);
+    text-align: center;
+    padding: 2.5rem 0;
+    box-shadow: var(--shadow);
+}
+
+.signup-header h1 {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* Signup Container */
+.signup-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+}
+
+.signup-box {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--light-blue);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: var(--shadow);
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.signup-box h2 {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--light-blue);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+}
+
+.form-section h3 {
+    color: var(--accent-blue);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.form-section h3::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background-color: var(--accent-blue);
+    margin-right: 0.8rem;
+    border-radius: 2px;
+}
+
+/* Form Styles */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group label {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-label {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.required {
+    color: #389fc4;
+}
+
+input, select, textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--light-blue);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+/* FIXED: Dropdown styling for better visibility */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23cbd5e1'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 3rem;
+}
+
+select option {
+    background-color: var(--secondary-blue);
+    color: var(--white);
+    padding: 0.8rem;
+}
+
+select:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--medium-gray);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Radio Group */
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+    margin: 0;
+}
+
+.radio-option span {
+    color: var(--white);
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 1.8rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    flex: 1;
+    min-width: 140px;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: var(--white);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--light-blue);
+    color: var(--white);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--accent-blue);
+    transform: translateY(-2px);
+}
+
+.btn-primary:disabled, .btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--accent-blue);
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    font-family: inherit;
+}
+
+.btn-text:hover {
+    color: #60a5fa;
+}
+
+/* Autocomplete */
+.autocomplete {
+    position: relative;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid var(--light-blue);
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-blue);
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.autocomplete-items div {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid var(--light-blue);
+    color: var(--white);
+}
+
+.autocomplete-items div:hover {
+    background-color: var(--accent-blue);
+}
+
+.autocomplete-active {
+    background-color: var(--accent-blue) !important;
+    color: var(--white) !important;
+}
+
+
+
+
+.error-message {
+    color: #8aacd1;
+    margin-top: 0.5rem;
+    display: none;
+    font-size: 0.9rem;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Validation Styles */
+input:invalid, select:invalid, textarea:invalid {
+    border-color: var(--error-color);
+}
+
+input:valid, select:valid, textarea:valid {
+    border-color: var(--success-color);
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.back-button a {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 0.7rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-button a:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-box {
+        padding: 1.5rem;
+        max-height: 90vh;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+    
+    .form-section h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-box {
+        padding: 1rem;
+    }
+    
+    .signup-box h2 {
+        font-size: 1.5rem;
+    }
+    
+
+}
+
+/* Validation Styles */
+.field-error-message {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+input:invalid {
+    border-color: var(--error-color);
+}
+
+input:valid {
+    border-color: var(--success-color);
+}
+
+/* Error and Success Colors - Add to your :root */
+:root {
+    --error-color: #dc2626;
+    --success-color: #16a34a;
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Create Mentorship Offer | BUP Alumni Association</title>
+
+  <!-- keep global header/footer styling intact -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- page specific styles -->
+  <link rel="stylesheet" href="../css/create_offer.css" />
+</head>
+<body>
+  <!-- header include -->
+  <div id="header-placeholder"></div>
+
+  <main class="create-offer-main">
+    <div class="container">
+      <div class="page-header">
+        <h1>Create New Mentorship Offer</h1>
+        <p class="page-subtitle">Share your expertise with BUP students and alumni by creating a mentorship offer.</p>
+      </div>
+
+      <section class="create-offer-section">
+        <form id="createOfferForm" class="offer-form" novalidate>
+          <!-- Offer Title -->
+          <div class="form-group">
+            <label for="offerTitle">Offer Title <span class="required">*</span></label>
+            <input id="offerTitle" name="title" type="text" placeholder="e.g., Career Guidance in Data Analytics" required>
+            <small class="form-error" data-for="offerTitle"></small>
+          </div>
+
+          <!-- Category -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="offerCategory">Category <span class="required">*</span></label>
+              <select id="offerCategory" name="category" required>
+                <option value="">Select category</option>
+                <option>Technology</option>
+                <option>Business</option>
+                <option>Personal Development</option>
+                <option>Marketing</option>
+                <option>Design</option>
+                <option>Other</option>
+              </select>
+              <small class="form-error" data-for="offerCategory"></small>
+            </div>
+
+            <!-- Max Applicants -->
+            <div class="form-group">
+              <label for="maxApplicants">Max Applicants</label>
+              <input id="maxApplicants" name="max" type="number" min="1" placeholder="e.g., 10">
+              <small class="form-hint">Leave empty for no limit</small>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label for="offerDescription">Description <span class="required">*</span></label>
+            <textarea id="offerDescription" name="description" rows="5" placeholder="Briefly describe your mentorship offer..." required></textarea>
+            <small class="form-error" data-for="offerDescription"></small>
+          </div>
+
+          <!-- Schedule -->
+          <div class="form-group">
+            <label for="offerSchedule">Availability / Schedule</label>
+            <input id="offerSchedule" name="schedule" type="text" placeholder="e.g., Weekends 3–6 PM or Mon/Wed 7–9 PM">
+            <small class="form-hint">Optional: add preferred meeting days/times</small>
+          </div>
+
+          <!-- Status -->
+          <div class="form-group">
+            <label for="offerStatus">Status <span class="required">*</span></label>
+            <select id="offerStatus" name="status" required>
+              <option value="">Select status</option>
+              <option value="Active" selected>Active</option>
+              <option value="Closed">Closed</option>
+              <option value="Draft">Draft</option>
+            </select>
+            <small class="form-error" data-for="offerStatus"></small>
+          </div>
+
+          <!-- Actions -->
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Create Offer</button>
+            <button type="reset" class="btn-secondary">Clear</button>
+          </div>
+
+          <div id="formMessage" class="form-message" aria-live="polite"></div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="successClose" aria-label="Close">&times;</button>
+      <h2>✅ Offer Created</h2>
+      <p id="createdOfferTitle" class="created-title"></p>
+      <div class="modal-actions">
+        <a href="my-offers.html" class="btn-primary">View My Offers</a>
+        <button id="createAnother" class="btn-secondary">Create Another</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer include -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Page JS -->
+  <script>
+    /* -------------------------
+       Create Offer page JS (robust)
+       ------------------------- */
+       document.addEventListener("DOMContentLoaded", () => {
+      // Load header and footer
+      fetch('../includes/header.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data)
+        .catch(err => console.error('Header load error:', err));
+
+      fetch('../includes/footer.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data)
+        .catch(err => console.error('Footer load error:', err));
+
+    
+      // get DOM elements (by id) - safer than using form.* lookups
+      const form = document.getElementById('createOfferForm');
+      const messageBox = document.getElementById('formMessage');
+      const modal = document.getElementById('successModal');
+      const createdTitleEl = document.getElementById('createdOfferTitle');
+      const createAnotherBtn = document.getElementById('createAnother');
+      const modalClose = document.getElementById('successClose');
+    
+      if (!form) {
+        console.error('createOfferForm not found in DOM.');
+        return;
+      }
+    
+      // Inputs
+      const inputTitle = document.getElementById('offerTitle');
+      const inputCategory = document.getElementById('offerCategory');
+      const inputDescription = document.getElementById('offerDescription');
+      const inputSchedule = document.getElementById('offerSchedule');
+      const inputMax = document.getElementById('maxApplicants');
+      const inputStatus = document.getElementById('offerStatus');
+    
+      function showErrorById(id, text) {
+        try {
+          const err = document.querySelector(`.form-error[data-for="${id}"]`);
+          if (err) { err.textContent = text; err.style.display = 'block'; }
+          const el = document.getElementById(id);
+          if (el) el.classList.add('invalid');
+        } catch (e) {
+          console.warn('showErrorById failed', e);
+        }
+      }
+      function clearErrorById(id) {
+        try {
+          const err = document.querySelector(`.form-error[data-for="${id}"]`);
+          if (err) { err.textContent = ''; err.style.display = 'none'; }
+          const el = document.getElementById(id);
+          if (el) el.classList.remove('invalid');
+        } catch (e) {
+          console.warn('clearErrorById failed', e);
+        }
+      }
+    
+      function validate() {
+        let ok = true;
+    
+        if (!inputTitle || !inputTitle.value.trim()) {
+          showErrorById('offerTitle', 'Title is required.');
+          ok = false;
+        } else clearErrorById('offerTitle');
+    
+        if (!inputCategory || !inputCategory.value.trim()) {
+          showErrorById('offerCategory', 'Category is required.');
+          ok = false;
+        } else clearErrorById('offerCategory');
+    
+        if (!inputDescription || !inputDescription.value.trim()) {
+          showErrorById('offerDescription', 'Description is required.');
+          ok = false;
+        } else clearErrorById('offerDescription');
+    
+        if (!inputStatus || !inputStatus.value.trim()) {
+          showErrorById('offerStatus', 'Select a status.');
+          ok = false;
+        } else clearErrorById('offerStatus');
+    
+        return ok;
+      }
+    
+      function saveOffer(offer) {
+        try {
+          const key = 'bup_offers_demo_v1';
+          const existing = JSON.parse(localStorage.getItem(key) || '[]');
+          existing.unshift(offer);
+          localStorage.setItem(key, JSON.stringify(existing));
+        } catch (e) {
+          console.warn('Could not save to localStorage', e);
+        }
+      }
+    
+      function openModal(offerTitle) {
+        if (!modal || !createdTitleEl) return;
+        createdTitleEl.textContent = offerTitle || '';
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        // optional: focus the first action inside modal
+        const focusable = modal.querySelector('a,button,input,select,textarea');
+        if (focusable) focusable.focus();
+      }
+      function closeModal() {
+        if (!modal) return;
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    
+      // Submit handler
+      form.addEventListener('submit', (evt) => {
+        evt.preventDefault();
+        if (!validate()) {
+          if (messageBox) {
+            messageBox.textContent = '⚠️ Please fix the highlighted fields.';
+            messageBox.className = 'form-message error';
+          }
+          return;
+        }
+    
+        const offer = {
+          title: inputTitle ? inputTitle.value.trim() : '',
+          category: inputCategory ? inputCategory.value.trim() : '',
+          description: inputDescription ? inputDescription.value.trim() : '',
+          schedule: inputSchedule ? inputSchedule.value.trim() : '',
+          maxApplicants: inputMax && inputMax.value ? parseInt(inputMax.value, 10) : null,
+          status: inputStatus ? inputStatus.value : '',
+          createdAt: new Date().toISOString()
+        };
+    
+        saveOffer(offer);
+    
+        if (messageBox) {
+          messageBox.textContent = '';
+          messageBox.className = 'form-message';
+        }
+        form.reset();
+        openModal(offer.title);
+      });
+    
+      // hide error on input
+      [inputTitle, inputCategory, inputDescription, inputSchedule, inputMax, inputStatus].forEach(el => {
+        if (!el) return;
+        el.addEventListener('input', () => clearErrorById(el.id));
+      });
+    
+      // modal controls (safe-guards if elements missing)
+      if (createAnotherBtn) {
+        createAnotherBtn.addEventListener('click', () => {
+          closeModal();
+          const t = document.getElementById('offerTitle');
+          if (t) t.focus();
+        });
+      }
+    
+      if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+      }
+    
+      // close on overlay click
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeModal();
+        });
+      }
+    
+      // close on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    });
+    </script>
+    
+</body>
+</html>

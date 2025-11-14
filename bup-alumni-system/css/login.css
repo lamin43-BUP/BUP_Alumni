@@ -1,0 +1,336 @@
+/*!
+ * BUP Alumni System - Login Page Styles
+ * Following Coding Standards and Design Pattern
+ */
+
+/* CSS Variables for Darker Professional Theme */
+:root {
+    --primary-blue: #0f172a;
+    --secondary-blue: #1e293b;
+    --accent-blue: #3b82f6;
+    --light-blue: #334155;
+    --dark-blue: #020617;
+    --white: #ffffff;
+    --light-gray: #f1f5f9;
+    --medium-gray: #cbd5e1;
+    --dark-gray: #64748b;
+    --text-dark: #0f172a;
+    --text-light: #f8fafc;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --border-radius: 8px;
+    --error-color: #f87171;
+    --success-color: #4ade80;
+}
+
+/* Page Background */
+body {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+.login-header {
+    background-color: var(--primary-blue);
+    text-align: center;
+    padding: 2.5rem 0;
+    box-shadow: var(--shadow);
+}
+
+.login-header h1 {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* Login Container */
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.login-box {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--light-blue);
+    border-radius: var(--border-radius);
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: var(--shadow);
+}
+
+/* Login Header Section */
+.login-header-section {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.login-icon {
+    margin-bottom: 1.5rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.fallback-icon {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.login-header-section h2 {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.login-header-section p {
+    color: var(--medium-gray);
+    font-size: 1rem;
+}
+
+/* Form Styles */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.form-group label {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--light-blue);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+input::placeholder {
+    color: var(--medium-gray);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Password Toggle */
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 2.5rem;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--accent-blue);
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-text:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.checkbox-option input[type="checkbox"] {
+    margin: 0;
+}
+
+.checkbox-option span {
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.forgot-password {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #60a5fa;
+}
+
+/* Error Message */
+.error-message {
+    color: var(--error-color);
+    background-color: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    border-radius: var(--border-radius);
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Login Button */
+.btn-login {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.9rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    font-family: inherit;
+}
+
+.btn-login:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.btn-login:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Signup Link */
+.signup-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--light-blue);
+}
+
+.signup-link p {
+    color: var(--medium-gray);
+    font-size: 0.95rem;
+}
+
+.signup-link a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: #60a5fa;
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.back-button a {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 0.7rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-button a:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 2rem 1.5rem;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+    
+    .login-icon {
+        height: 60px;
+    }
+    
+    .login-icon img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .fallback-icon {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-box {
+        padding: 1.5rem 1rem;
+    }
+    
+    .login-header-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .login-header-section p {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,337 @@
+/*!
+ * BUP Alumni System - Signup Select Page Styles
+ * Following Coding Standards and Design Pattern
+ */
+
+/* CSS Variables for Darker Professional Theme */
+:root {
+    --primary-blue: #0f172a;
+    --secondary-blue: #1e293b;
+    --accent-blue: #3b82f6;
+    --light-blue: #334155;
+    --dark-blue: #020617;
+    --white: #ffffff;
+    --light-gray: #f1f5f9;
+    --medium-gray: #cbd5e1;
+    --dark-gray: #64748b;
+    --text-dark: #0f172a;
+    --text-light: #f8fafc;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --border-radius: 8px;
+}
+
+/* Page Background */
+body {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
+.signup-header {
+    background-color: var(--primary-blue);
+    text-align: center;
+    padding: 2.5rem 0;
+    box-shadow: var(--shadow);
+}
+
+.signup-header h1 {
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* Signup Select Container */
+.signup-select-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.signup-select-box {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--light-blue);
+    border-radius: var(--border-radius);
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.signup-select-box h2 {
+    color: var(--white);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: var(--medium-gray);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+}
+
+/* Signup Options */
+.signup-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.signup-option {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    border: 2px solid var(--light-blue);
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.signup-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.signup-option:hover {
+    border-color: var(--accent-blue);
+    background: linear-gradient(145deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05));
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.signup-option:hover::before {
+    left: 100%;
+}
+
+.option-icon {
+    margin-bottom: 1.5rem;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.fallback-icon {
+    font-size: 5rem;
+    line-height: 1;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 3px solid var(--accent-blue);
+    background: rgba(59, 130, 246, 0.1);
+    transition: all 0.3s ease;
+}
+
+.signup-option:hover .fallback-icon {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.signup-option h3 {
+    color: var(--white);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.signup-option p {
+    color: var(--medium-gray);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.option-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    color: var(--light-gray);
+    font-size: 0.9rem;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+/* Updated Button Styles for Link Elements */
+.btn-select {
+    background: linear-gradient(135deg, var(--accent-blue), #2563eb);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: inherit;
+}
+
+.btn-select:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Login Redirect */
+.login-redirect {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--light-blue);
+}
+
+.login-redirect p {
+    color: var(--medium-gray);
+    font-size: 1rem;
+}
+
+.login-redirect a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-redirect a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+}
+
+/* Back Button */
+.back-button {
+    margin-top: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.back-button a {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 0.7rem 2rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.back-button a:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signup-option {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.signup-option:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.signup-option:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-select-box {
+        padding: 2rem 1.5rem;
+        max-width: 500px;
+    }
+    
+    .signup-options {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .signup-option {
+        padding: 2rem 1.5rem;
+    }
+    
+    .signup-select-box h2 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-select-box {
+        padding: 1.5rem 1rem;
+    }
+    
+    .signup-options {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .signup-option {
+        padding: 1.5rem 1rem;
+    }
+    
+    .signup-select-box h2 {
+        font-size: 1.6rem;
+    }
+    
+    .option-icon {
+        height: 100px;
+    }
+    
+    .fallback-icon {
+        font-size: 4rem;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .signup-option h3 {
+        font-size: 1.4rem;
+    }
+}

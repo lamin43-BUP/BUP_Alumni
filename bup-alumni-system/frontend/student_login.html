@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login | BUP Alumni Association</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="login-header">
+        <h1>BUP Alumni Association</h1>
+    </header>
+
+    <!-- Main Login Section -->
+    <section class="login-container">
+        <div class="login-box">
+            <div class="login-header-section">
+                <div class="login-icon">
+                    <div class="fallback-icon">🎓</div>
+                </div>
+                <h2>Student Login</h2>
+                <p>Access your student account</p>
+            </div>
+            
+            <form id="studentLoginForm" class="login-form" novalidate>
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" name="studentId" placeholder="Enter your BUP Student ID" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="8">
+                    <div class="password-toggle">
+                        <button type="button" id="togglePassword" class="btn-text">Show</button>
+                    </div>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="/frontend/forgot_password.html" class="forgot-password">Forgot Password?</a>
+                </div>
+                
+                <div id="loginError" class="error-message" aria-live="polite"></div>
+                
+                <button type="submit" class="btn-login">Login to Student Portal</button>
+                
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="/frontend/student_signup.html">Sign up as Student</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="/frontend/login_select.html">Back to Login Options</a>
+    </div>
+
+    <script src="/js/student_login.js"></script>
+</body>
+</html>

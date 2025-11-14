@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Mentorship Dashboard | BUP Alumni</title>
+
+  <!-- keep global header/footer styles (do not change style.css) -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- page-specific styles -->
+  <link rel="stylesheet" href="../css/mentorship_student_dashboard.css">
+</head>
+<body>
+  <!-- header include (same pattern as your other pages) -->
+  <div id="header-placeholder"></div>
+
+  <!-- MAIN WRAPPER (prevents overlap with sticky header) -->
+  <main class="mentorship-main">
+    <div class="container">
+      <!-- page header -->
+      <div class="page-header">
+        <h1>Student Mentorship Dashboard</h1>
+        <p class="page-subtitle">Explore offers, track your applications, and manage sessions.</p>
+      </div>
+
+      <!-- Quick Action / Floating Cards -->
+      <section class="quick-actions" aria-label="Student quick actions">
+        <div class="card" role="link" tabindex="0" onclick="location.href='browse_offers.html'">
+          <h3>Browse Offers</h3>
+          <p>Explore available mentorship offers and filter by expertise & department.</p>
+        </div>
+
+        <div class="card" role="link" tabindex="0" onclick="location.href='my_applications.html'">
+          <h3>My Applications</h3>
+          <p>View the status of applications you've submitted to mentors.</p>
+        </div>
+
+        <div class="card" role="link" tabindex="0" onclick="location.href='my_sessions.html'">
+          <h3>My Sessions</h3>
+          <p>See scheduled sessions, join links, and past sessions history.</p>
+        </div>
+      </section>
+
+      <!-- Optional summary / analytics row (small) -->
+      <section class="summary-row" aria-hidden="false">
+        <div class="summary-card">
+          <strong id="totalOffers">—</strong>
+          <span>Total Offers</span>
+        </div>
+        <div class="summary-card">
+          <strong id="myApplications">—</strong>
+          <span>My Applications</span>
+        </div>
+        <div class="summary-card">
+          <strong id="upcomingSessions">—</strong>
+          <span>Upcoming Sessions</span>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- footer include -->
+  <div id="footer-placeholder"></div>
+
+  <!-- includes loader (same logic you used before) -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // load header
+      fetch('../includes/header.html')
+        .then(res => {
+          if (!res.ok) throw new Error('Header not found');
+          return res.text();
+        })
+        .then(html => document.getElementById('header-placeholder').innerHTML = html)
+        .catch(err => console.error('Header load error:', err));
+
+      // load footer
+      fetch('../includes/footer.html')
+        .then(res => {
+          if (!res.ok) throw new Error('Footer not found');
+          return res.text();
+        })
+        .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+        .catch(err => console.error('Footer load error:', err));
+
+      // small demo: populate summary numbers (replace with real data later)
+      document.getElementById('totalOffers').textContent = '24';
+      document.getElementById('myApplications').textContent = '2';
+      document.getElementById('upcomingSessions').textContent = '1';
+    });
+
+    // make cards keyboard-accessible (Enter key)
+    document.addEventListener('keydown', (e) => {
+      if ((e.key === 'Enter' || e.key === ' ') && document.activeElement.classList.contains('card')) {
+        document.activeElement.click();
+      }
+    });
+  </script>
+</body>
+</html>

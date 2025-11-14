@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - BUP Alumni</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="../images/bup-logo.png" alt="BUP Logo" class="logo">
+                    <div class="logo-text">
+                        <h1>Bangladesh University of Professionals</h1>
+                        <p>Alumni Association</p>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="events.html" class="nav-link">About us</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                        <li><a href="user-profile.html" class="nav-link">My Profile</a></li>
+                        <li><a href="login_select.html" class="nav-link">Login</a></li>
+                        <li><a href="signup_select.html" class="btn-primary">Signup</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h1 class="contact-title">Contact Us</h1>
+                <p class="contact-subtitle">Get in touch with Bangladesh University of Professionals</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Map Section -->
+                <div class="map-section">
+                    <h2 class="section-title">Find Our Campus</h2>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.598415714743!2d90.3610149750583!3d23.798506478633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7b8676c7c9d%3A0x6dd32b9c7d81f8b1!2sBangladesh%20University%20of%20Professionals%20(BUP)!5e0!3m2!1sen!2sbd!4v1698765432100!5m2!1sen!2sbd" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0; border-radius: var(--border-radius);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Information & Feedback Form -->
+                <div class="contact-grid">
+                    <!-- Contact Information -->
+                    <div class="contact-info-section">
+                        <h2 class="section-title">University Contact Information</h2>
+                        <div class="contact-info-card">
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div class="contact-details">
+                                    <h3>Address</h3>
+                                    <p>Bangladesh University of Professionals<br>
+                                    Mirpur Cantonment, Dhaka-1216<br>
+                                    Bangladesh</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div class="contact-details">
+                                    <h3>Phone</h3>
+                                    <p>+880 2 800 0000<br>
+                                    +880 2 800 0001</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-details">
+                                    <h3>Email</h3>
+                                    <p>info@bup.edu.bd<br>
+                                    alumni@bup.edu.bd</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">🌐</div>
+                                <div class="contact-details">
+                                    <h3>Website</h3>
+                                    <p>www.bup.edu.bd</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">🕒</div>
+                                <div class="contact-details">
+                                    <h3>Office Hours</h3>
+                                    <p>Sunday - Thursday<br>
+                                    9:00 AM - 5:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Form -->
+                    <div class="feedback-section">
+                        <h2 class="section-title">Share Your Feedback</h2>
+                        <form class="feedback-form" id="feedbackForm">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" id="name" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message *</label>
+                                <textarea id="message" class="form-input" rows="8" placeholder="Please share your feedback, questions, or concerns..." required></textarea>
+                                <div class="error-message" id="messageError" style="display: none;">
+                                    Please write your feedback before submitting.
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Submit Feedback</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/bup-logo.png" alt="BUP Logo" class="logo">
+                        <h3>BUP Alumni Association</h3>
+                    </div>
+                    <p class="footer-description">
+                        Connecting Bangladesh University of Professionals alumni worldwide to foster professional growth, networking, and lifelong learning.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="mentorship.html">Mentorship</a></li>
+                        <li><a href="blood-bank.html">Blood Bank</a></li>
+                        <li><a href="user-profile.html">My Profile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="career-center.html">Career Center</a></li>
+                        <li><a href="mentorship-program.html">Mentorship Program</a></li>
+                        <li><a href="alumni-benefits.html">Alumni Benefits</a></li>
+                        <li><a href="news.html">News & Updates</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p>Bangladesh University of Professionals</p>
+                        <p>Mirpur Cantonment, Dhaka-1216</p>
+                        <p>Bangladesh</p>
+                        <p>Email: alumni@bup.edu.bd</p>
+                        <p>Phone: +880 123 456 7890</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bangladesh University of Professionals Alumni Association. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        (function() {
+            'use strict';
+            
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle && navList) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navList.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (navList.classList.contains('active')) {
+                        navList.classList.remove('active');
+                    }
+                });
+            });
+        })();
+
+        // Feedback form validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const feedbackForm = document.getElementById('feedbackForm');
+            const messageInput = document.getElementById('message');
+            const messageError = document.getElementById('messageError');
+
+            feedbackForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Reset error message
+                messageError.style.display = 'none';
+                messageInput.style.borderColor = '';
+                
+                // Check if message is empty
+                if (!messageInput.value.trim()) {
+                    messageError.style.display = 'block';
+                    messageInput.style.borderColor = '#ef4444';
+                    messageInput.focus();
+                    return;
+                }
+                
+                // If validation passes, show success message and reset form
+                alert('Thank you for your feedback! Your message has been submitted successfully.');
+                feedbackForm.reset();
+            });
+
+            // Clear error when user starts typing
+            messageInput.addEventListener('input', function() {
+                if (messageInput.value.trim()) {
+                    messageError.style.display = 'none';
+                    messageInput.style.borderColor = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
