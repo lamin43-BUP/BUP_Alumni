@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Home | BUP Alumni Association</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/alumni_home.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="home-wrapper">
+        <div class="container">
+            
+            <div class="page-header">
+                <h1>Welcome Back, Alumni!</h1>
+                <p>Access all alumni features from one place.</p>
+            </div>
+
+            <!-- Feature Cards -->
+            <section class="home-cards">
+
+                <a href="user_profile.html" class="card">
+                    <h3>My Profile</h3>
+                    <p>Manage your personal and professional information.</p>
+                </a>
+
+                <a href="alumni_details.html" class="card">
+                    <h3>Alumni Details</h3>
+                    <p>Browse and connect with alumni across departments.</p>
+                </a>
+
+                <a href="events.html" class="card">
+                    <h3>Events</h3>
+                    <p>Stay updated on alumni meetups and special programs.</p>
+                </a>
+
+                <a href="blood_bank.html" class="card">
+                    <h3>Blood Bank</h3>
+                    <p>Find or request blood donors within the alumni network.</p>
+                </a>
+
+                <a href="mentorship.html" class="card">
+                    <h3>Mentorship</h3>
+                    <p>Offer guidance or mentor students and juniors.</p>
+                </a>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JS -->
+    <script src="../js/alumni_home.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    
+    // Load Header
+    fetch('../includes/header.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data)
+        .catch(err => console.error('Header Error:', err));
+
+    // Load Footer
+    fetch('../includes/footer.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data)
+        .catch(err => console.error('Footer Error:', err));
+});
+
+    </script>
+</body>
+</html>

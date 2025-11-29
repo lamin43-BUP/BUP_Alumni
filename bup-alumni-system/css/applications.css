@@ -1,0 +1,134 @@
+/* frontend/css/applications.css */
+/* CLEAN, SEPARATED, AND BEAUTIFUL — MATCHES YOUR ENTIRE PROJECT */
+
+.applications-wrapper {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+  
+  /* Back Button — Beautiful with arrow */
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background:  #3b82f6;
+    color: white;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+  }
+  .back-btn:hover {
+    background: #334155;
+    color: #3b82f6;
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+  }
+  .back-btn::before {
+    content: "←";
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  
+  /* Applications Table */
+  .applications-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-top: 1rem;
+  }
+  .applications-table th {
+    background: #334155;
+    color: #e2e8f0;
+    padding: 1.4rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .applications-table td {
+    padding: 1.4rem 1rem;
+    border-bottom: 1px solid #334155;
+    vertical-align: top;
+  }
+  .applications-table tr:hover {
+    background: #293548;
+  }
+  
+  /* Applicant Photo */
+  .applicant-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3b82f6;
+  }
+  
+  /* Message Column */
+  .message {
+    max-width: 320px;
+    word-wrap: break-word;
+    color: #cbd5e1;
+    line-height: 1.6;
+  }
+  
+  /* Status Badges */
+  .status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .status-pending   { background: rgba(251,191,36,0.2); color: #f59e0b; border: 1px solid #f59e0b; }
+  .status-approved  { background: rgba(34,197,94,0.2); color: #22c55e; border: 1px solid #22c55e; }
+  .status-rejected  { background: rgba(239,68,68,0.2); color: #ef4444; border: 1px solid #ef4444; }
+  
+  /* Action Buttons */
+  .action-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    margin: 0.3rem;
+    min-width: 90px;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  
+  /* No Applicants Message */
+  .no-applicants {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    background: #1e293b;
+    border-radius: 12px;
+    margin-top: 2rem;
+    line-height: 1.8;
+  }
+  
+  /* Search Box */
+  .search-box {
+    padding: 0.9rem 1.2rem;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s ease;
+  }
+  .search-box:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }

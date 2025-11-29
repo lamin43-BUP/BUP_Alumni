@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUP Alumni - Connecting Professionals</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="/css/style.css">
-=======
-    <link rel="stylesheet" href="/bup-alumni-system/css/style.css">
->>>>>>> origin/main
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -17,11 +13,8 @@
             <div class="header-content">
                 <div class="logo-section">
                     <div class="logo-container">
-<<<<<<< HEAD
-                        <img src="/images/bup-logo.png" alt="BUP Logo" class="logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
-=======
-                        <img src="/bup-alumni-system/images/bup-logo.png" alt="BUP Logo" class="logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
->>>>>>> origin/main
+                        <img src="/images/bup-logo.png" alt="BUP Logo" class="logo" 
+                             onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
                         <div id="logo-fallback" class="logo-fallback" style="display: none;">
                             <span>BUP</span>
                         </div>
@@ -31,16 +24,25 @@
                         <p>Alumni Association</p>
                     </div>
                 </div>
+
                 <nav class="main-nav">
                     <ul class="nav-list">
                         <li><a href="../index.html" class="nav-link">Home</a></li>
                         <li><a href="../events.html" class="nav-link">Events</a></li>
                         <li><a href="../mentorship.html" class="nav-link">Mentorship</a></li>
                         <li><a href="../blood-bank.html" class="nav-link">Blood Bank</a></li>
-                        <li><a href="alumni_details.html" class="nav-link active">Alumni Directory</a></li>
-                        <li><a href="../login.html" class="nav-link">Login</a></li>
+                        <li><a href="../alumni_details.html" class="nav-link">Alumni Directory</a></li>
+
+                        <!-- LOGIN FIRST -->
+                        <li id="authSection">
+                            <a href="../login_select.html" class="nav-link">Login</a>
+                        </li>
+
+                       
+                        </li>
                     </ul>
                 </nav>
+
                 <button class="mobile-menu-toggle" id="mobileMenuToggle">
                     <span></span>
                     <span></span>
@@ -49,27 +51,5 @@
             </div>
         </div>
     </header>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const navList = document.querySelector('.nav-list');
-            
-            if (mobileMenuToggle && navList) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    navList.classList.toggle('active');
-                });
-            }
-            
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    if (navList.classList.contains('active')) {
-                        navList.classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>

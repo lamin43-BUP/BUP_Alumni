@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Applicants | BUP Alumni Association</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/my_offer.css">
+  <link rel="stylesheet" href="../css/applications.css"> <!-- SEPARATED & CLEAN -->
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="applications-wrapper">
+    <div class="container">
+      <a href="my_offer.html" class="back-btn">Back to My Offers</a>
+      
+      <div class="page-header">
+        <h1 id="offer-title">Loading offer...</h1>
+        <p class="page-subtitle">Review and manage mentorship applications</p>
+      </div>
+
+      <input type="text" id="searchInput" class="search-box" placeholder="Search by name, batch, or message...">
+
+      <table class="applications-table">
+        <thead>
+          <tr>
+            <th>Applicant</th>
+            <th>Message</th>
+            <th>Applied On</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="applicationsBody"></tbody>
+      </table>
+
+      <div id="noApplicants" class="no-applicants" style="display:none;">
+        No applications received yet.<br>
+        Share your mentorship offer to attract mentees!
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/applications.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch('../includes/header.html').then(r => r.text()).then(h => document.getElementById('header-placeholder').innerHTML = h);
+      fetch('../includes/footer.html').then(r => r.text()).then(f => document.getElementById('footer-placeholder').innerHTML = f);
+    });
+  </script>
+</body>
+</html>
