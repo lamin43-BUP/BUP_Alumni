@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile - BUP Alumni</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/user_profile.css">
+    <link rel="stylesheet" href="../css/alumni_profile.css">
 </head>
+<script src="/js/alumni_profile.js"></script>
 <body>
+    <!-- Top Popup -->
+    <div class="top-popup" id="topPopup">
+        <div class="popup-content">
+            <span class="popup-icon">✓</span>
+            <p class="popup-text">Your profile has been updated successfully!</p>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="main-header">
         <div class="container">
@@ -21,11 +30,10 @@
                 </div>
                 <nav class="main-nav">
                     <ul class="nav-list">
-                        <li><a href="../index.html" class="nav-link">Home</a></li>
+                        <li><a href="alumni_home.html" class="nav-link">Home</a></li>
                         <li><a href="../events.html" class="nav-link">About us</a></li>
-                        <li><a href="user_profile.html" class="nav-link active">My Profile</a></li>
-                        <li><a href="/bup-alumni-system/frontend/login_select.html" class="nav-link">Login</a></li>
-                        <li><a href="/bup-alumni-system/frontend/signup_select.html" class="btn-primary">Signup</a></li>
+                        <li><a href="alumni_profile.html" class="nav-link active">My Profile</a></li>
+                        
                     </ul>
                 </nav>
                 <button class="mobile-menu-toggle" id="mobileMenuToggle">
@@ -42,7 +50,7 @@
         <div class="container profile-container">
             <!-- Centered Profile Title -->
             <div class="profile-header">
-                <h1 class="profile-title">My Profile</h1>
+                <h1 class="profile-title">Alumni Profile</h1>
             </div>
             
             <div class="profile-content">
@@ -73,6 +81,33 @@
                                     <label for="batch" class="form-label">Batch</label>
                                     <input type="text" id="batch" class="form-input" value="2018" readonly>
                                 </div>
+
+                                <!-- New Fields Added Here -->
+                                <div class="form-group">
+                                    <label for="graduationYear" class="form-label">Graduation Year</label>
+                                    <input type="text" id="graduationYear" class="form-input" value="2022" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="alumniStatus" class="form-label">Alumni Status</label>
+                                    <input type="text" id="alumniStatus" class="form-input" value="Active" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="gender" class="form-label">Gender</label>
+                                    <input type="text" id="gender" class="form-input" value="Female" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bloodGroup" class="form-label">Blood Group</label>
+                                    <input type="text" id="bloodGroup" class="form-input" value="A+" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="religion" class="form-label">Religion</label>
+                                    <input type="text" id="religion" class="form-input" value="Islam" readonly>
+                                </div>
+                                <!-- End of New Fields -->
                                 
                                 <div class="form-group">
                                     <label for="email" class="form-label">Email Address</label>
@@ -82,6 +117,16 @@
                                 <div class="form-group">
                                     <label for="phone" class="form-label">Phone Number</label>
                                     <input type="tel" id="phone" class="form-input" value="+880 1234 567890" readonly>
+                                </div>
+                                
+                                <div class="form-group full-width">
+                                    <label for="currentWorkplace" class="form-label">Current Workplace</label>
+                                    <input type="text" id="currentWorkplace" class="form-input" value="Tech Solutions Ltd." readonly>
+                                </div>
+                                
+                                <div class="form-group full-width">
+                                    <label for="designation" class="form-label">Designation</label>
+                                    <input type="text" id="designation" class="form-input" value="Software Engineer" readonly>
                                 </div>
                                 
                                 <div class="form-group full-width">
@@ -138,14 +183,6 @@
                             <button type="button" class="btn-secondary" id="cancelEditBtn" style="display: none;">Cancel</button>
                             <button type="submit" class="btn-primary" id="saveProfileBtn" style="display: none;">Save Changes</button>
                             <button type="button" class="btn-primary" id="editProfileBtn">Edit Profile</button>
-                        </div>
-                    </div>
-                    
-                    <!-- Success Message -->
-                    <div class="success-message" id="successMessage" style="display: none;">
-                        <div class="message-content">
-                            <span class="message-icon">✓</span>
-                            <p>Your profile has been updated successfully!</p>
                         </div>
                     </div>
                 </div>
@@ -238,7 +275,7 @@
             const editProfileBtn = document.getElementById('editProfileBtn');
             const cancelEditBtn = document.getElementById('cancelEditBtn');
             const saveProfileBtn = document.getElementById('saveProfileBtn');
-            const successMessage = document.getElementById('successMessage');
+            const topPopup = document.getElementById('topPopup');
             const formInputs = document.querySelectorAll('.form-input');
             
             let originalValues = {};
@@ -252,7 +289,7 @@
             editProfileBtn.addEventListener('click', function() {
                 // Make all inputs editable except student ID and department
                 formInputs.forEach(input => {
-                    if (input.id !== 'studentId' && input.id !== 'department') {
+                    if (input.id !== 'studentId' && input.id !== 'department' && input.id !== 'batch') {
                         input.readOnly = false;
                     }
                 });
@@ -262,8 +299,9 @@
                 saveProfileBtn.style.display = 'inline-block';
                 editProfileBtn.style.display = 'none';
                 
-                // Hide success message if visible
-                successMessage.style.display = 'none';
+                // Hide popup if visible
+                topPopup.style.display = 'none';
+                document.body.classList.remove('popup-active');
             });
             
             // Cancel edit button click
@@ -278,35 +316,95 @@
                 cancelEditBtn.style.display = 'none';
                 saveProfileBtn.style.display = 'none';
                 editProfileBtn.style.display = 'inline-block';
+                
+                // Hide popup if visible
+                topPopup.style.display = 'none';
+                document.body.classList.remove('popup-active');
             });
             
-            // Save profile button click
-            saveProfileBtn.addEventListener('click', function() {
-                // In a real application, you would send data to the server here
-                
-                // Make all inputs read-only again
-                formInputs.forEach(input => {
-                    input.readOnly = true;
-                });
-                
-                // Update original values
-                formInputs.forEach(input => {
-                    originalValues[input.id] = input.value;
-                });
-                
-                // Hide action buttons
-                cancelEditBtn.style.display = 'none';
-                saveProfileBtn.style.display = 'none';
-                editProfileBtn.style.display = 'inline-block';
-                
-                // Show success message
-                successMessage.style.display = 'block';
-                
-                // Hide success message after 5 seconds
-                setTimeout(function() {
-                    successMessage.style.display = 'none';
-                }, 5000);
+          // Save profile button click
+saveProfileBtn.addEventListener('click', async function() {
+    // Get the logged in user
+    const loginResponse = JSON.parse(localStorage.getItem('currentUser'));
+    const loggedInUser = loginResponse.user;
+    
+    // Prepare data to send to server
+const updatedData = {
+    alumni_id: loggedInUser.id,
+    name: document.getElementById('fullName').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    department: document.getElementById('department').value,
+    batch: document.getElementById('batch').value,
+    graduation_year: document.getElementById('graduationYear').value,
+    alumni_status: document.getElementById('alumniStatus').value,
+    current_workplace: document.getElementById('currentWorkplace').value,
+    profession: document.getElementById('designation').value, // CHANGED: designation → profession
+    address: document.getElementById('address').value,
+    gender: document.getElementById('gender').value,
+    blood_group: document.getElementById('bloodGroup').value, // CHANGED: bloodgroup → blood_group
+    religion: document.getElementById('religion').value,
+    facebook: document.getElementById('facebook').value,
+    linkedin: document.getElementById('linkedin').value
+};
+
+    console.log("DEBUG - Sending data to server:", updatedData);
+
+    try {
+        // Send data to server
+        const response = await fetch('/api/alumni-profile', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedData)
+        });
+
+        const result = await response.json();
+        console.log("DEBUG - Server response:", result);
+
+        if (result.success) {
+            // SUCCESS - continue with existing UI updates
+            // Make all inputs read-only again
+            formInputs.forEach(input => {
+                input.readOnly = true;
             });
+            
+            // Update original values
+            formInputs.forEach(input => {
+                originalValues[input.id] = input.value;
+            });
+            
+            // Hide action buttons
+            cancelEditBtn.style.display = 'none';
+            saveProfileBtn.style.display = 'none';
+            editProfileBtn.style.display = 'inline-block';
+            
+            // Scroll to top first
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Show TOP POPUP after scroll
+            setTimeout(function() {
+                topPopup.style.display = 'block';
+                document.body.classList.add('popup-active');
+                
+                // Hide popup after 3 seconds
+                setTimeout(function() {
+                    topPopup.style.display = 'none';
+                    document.body.classList.remove('popup-active');
+                }, 3000);
+            }, 500);
+        } else {
+            alert('Failed to update profile: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Error updating profile:', error);
+        alert('Error updating profile. Please try again.');
+    }
+});
         });
     </script>
 </body>

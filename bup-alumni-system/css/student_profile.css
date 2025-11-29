@@ -1,0 +1,341 @@
+/*!
+ * BUP Alumni System - Profile Page CSS
+ * Following Coding Standards
+ */
+
+/* Profile Section Styles */
+.profile-section {
+    padding: 4rem 0;
+    background-color: var(--white);
+    min-height: calc(100vh - 80px);
+}
+
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Centered Profile Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}
+
+.profile-title {
+    font-size: 2.8rem;
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+/* Profile Main Content - Blue Background */
+.profile-main {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2.5rem;
+    border: 1px solid var(--medium-gray);
+    color: var(--white);
+}
+
+/* All sections inside profile main get white text */
+.profile-main .info-section {
+    margin-bottom: 3rem;
+}
+
+.profile-main .info-section:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.profile-main .section-title {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+}
+
+/* Form Styles for Blue Background */
+.profile-form {
+    margin-bottom: 2rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.profile-main .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.profile-main .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: inherit;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.profile-main .form-input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.profile-main .form-input:read-only {
+    background-color: rgba(255, 255, 255, 0.05);
+    cursor: not-allowed;
+    color: var(--light-gray);
+}
+
+.profile-main .form-input:read-only:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+}
+
+.profile-main textarea.form-input {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.profile-main .form-input::placeholder {
+    color: var(--medium-gray);
+}
+
+/* Social Links Section */
+.social-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.social-link-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: var(--accent-blue);
+    transition: color 0.3s;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.social-link-icon:hover {
+    color: var(--primary-blue);
+    background: var(--white);
+}
+
+/* Form Actions - Buttons at bottom */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.back-button {
+    background-color: transparent;
+    color: var(--white);
+    padding: 0.6rem 1.8rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid var(--accent-blue);
+    transition: all 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.back-button:hover {
+    background-color: var(--accent-blue);
+    color: var(--white);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 0.6rem 1.8rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    padding: 0.6rem 1.8rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid var(--accent-blue);
+    transition: all 0.3s;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-blue);
+    color: var(--white);
+}
+
+/* Success Message */
+.success-message {
+    background-color: #d1fae5;
+    border: 1px solid #a7f3d0;
+    border-radius: var(--border-radius);
+    padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.message-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.message-icon {
+    background-color: #10b981;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.message-content p {
+    color: #065f46;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-header {
+        text-align: center;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-links-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .profile-main {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-main {
+        padding: 1rem;
+    }
+    
+    .profile-title {
+        font-size: 2.2rem;
+    }
+}
+
+ /* Top Popup Styles */
+        .top-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: none;
+            border-bottom: 3px solid var(--accent-blue);
+        }
+
+        .popup-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 120px
+        }
+
+        .popup-icon {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .popup-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* Add padding to body when popup is shown to prevent content jump */
+        body.popup-active {
+            padding-top: 100px;
+        }

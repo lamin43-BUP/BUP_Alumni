@@ -11,6 +11,9 @@ const authRoutes = require('./routes/authRoutes');
 const offerRoutes = require('./routes/offerRoutes');
 const applicationRoutes = require('./routes/applicationRoutes');
 const sessionsRoutes = require('./routes/sessionsRoutes');
+const studentProfileRoutes = require('./routes/studentProfileRoutes');
+const alumniProfileRoutes = require('./routes/alumniProfileRoutes');
+const feedbackRoutes = require('./routes/feedbackRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -65,6 +68,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/offers', offerRoutes);
 app.use('/api/applications', applicationRoutes);
 app.use('/api/sessions', sessionsRoutes);
+app.use('/api/student-profile', studentProfileRoutes);
+app.use('/api/alumni-profile', alumniProfileRoutes);
+app.use('/api', feedbackRoutes);
 
 // ===============================
 // Health check
@@ -139,7 +145,8 @@ app.get('/frontend/:page', (req, res, next) => {
     const allowedPages = [
         'index.html', 'signup_select.html', 'student_signup.html', 
         'alumni_signup.html', 'login_select.html', 'student_login.html', 
-        'alumni_login.html', 'alumni_details.html', 'create_offer.html'
+        'alumni_login.html', 'alumni_details.html', 'create_offer.html',
+        'student_profile.html', 'contact.html'
     ];
 
     if (allowedPages.includes(page)) {
@@ -178,6 +185,21 @@ app.use('*', (req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });
 
+// ========= ADD THIS EXACT BLOCK =========
+app.post('/api/feedback', async (req, res) => {
+    try {
+        const { name, email, feedback_message } = req.body;
+
+        const query = 'INSERT INTO feedbacks (name, email, feedback_message) VALUES (?, ?, ?)';
+        await db.query(query, [name, email, feedback_message]);
+
+        res.status(200).json({ success: true });
+    } catch (error) {
+        console.log('Feedback save error:', error);
+        res.status(500).json({ success: false });
+    }
+});
+// =======================================
 // ===============================
 // Start server
 // ===============================

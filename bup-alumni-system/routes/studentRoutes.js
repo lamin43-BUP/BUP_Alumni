@@ -131,6 +131,13 @@ router.post('/login', async (req, res) => {
                 role: 'student'
             }
         });
+        req.session.user = {
+            id: student.student_id,
+            role: 'student',
+            name: student.name,
+            email: student.email,
+            bup_id: student.bup_id
+        };
 
     } catch (error) {
         console.error('❌ Student login error:', error);

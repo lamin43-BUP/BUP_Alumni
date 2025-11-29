@@ -298,3 +298,49 @@
         font-size: 2.2rem;
     }
 }
+
+ /* Top Popup Styles */
+        .top-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--white);
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: none;
+            border-bottom: 3px solid var(--accent-blue);
+        }
+
+        .popup-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 120px
+        }
+
+        .popup-icon {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .popup-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* Add padding to body when popup is shown to prevent content jump */
+        body.popup-active {
+            padding-top: 100px;
+        }
+        /* Add this to alumni_profile.css */
+#designation.form-input {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: var(--white) !important;
+}
