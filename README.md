@@ -5,7 +5,7 @@ Team Name: BUP Alumni Devs
 Developed by students of **Information and Communication Engineering, BUP**, focusing on connecting alumni, students, and the university through a centralized platform.
 
 ## Team Members:
-- Hasibul Islam Mitul – 2254901035 
+- Hasibul Islam Mitul – 2254901031
 - Samia Maliha – 2254901043  
 - Ishrat Jahan – 2254901071  
 - Anika Tasnim Mrittika – 2254901115 
