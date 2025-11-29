@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Sessions | BUP Alumni Association</title>
+  <!-- Global + Page CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/upcoming_sessions.css">
+  <style>
+    /* FIX: White header text + better look */
+    .sessions-table th {
+      color: white !important;
+      background: #1e40af !important;
+      font-weight: 600;
+      text-align: center;
+    }
+    .modal { 
+      display: none; 
+      position: fixed; 
+      z-index: 1000; 
+      left: 0; top: 0; 
+      width: 100%; height: 100%; 
+      background: rgba(0,0,0,0.5); 
+      justify-content: center; 
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .modal-header {
+      padding: 1.5rem;
+      background: #1e40af;
+      color: white;
+      border-radius: 12px 12px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-header h2 { margin: 0; }
+    .close-modal { font-size: 28px; cursor: pointer; }
+    .modal-body { padding: 2rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+    .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; }
+    .modal-buttons { display: flex; gap: 1rem; margin-top: 1.5rem; }
+    .btn-cancel, .btn-save {
+      flex: 1; padding: 0.75rem; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;
+    }
+    .btn-cancel { background: #e2e8f0; color: #64748b; }
+    .btn-save { background: #3b82f6; color: white; }
+  </style>
+</head>
+<body>
+  <!-- Header Include -->
+  <div id="header-placeholder"></div>
+
+  <main class="sessions-main">
+    <div class="container">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1>Upcoming Mentorship Sessions</h1>
+        <p class="page-subtitle">View and manage all your scheduled mentorship sessions.</p>
+      </div>
+
+      <!-- Summary Cards -->
+      <div class="session-stats">
+        <div class="stat-card">
+          <h3>Total Sessions</h3>
+          <p id="totalSessions">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Pending Sessions</h3>
+          <p id="pendingSessions">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Completed Sessions</h3>
+          <p id="completedSessions">0</p>
+        </div>
+      </div>
+
+      <!-- Sessions Table -->
+      <section class="sessions-table-section">
+        <h2>Session List</h2>
+        <table class="sessions-table" id="sessionsTable">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Topic</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="sessionsBody">
+            <!-- Filled by JS -->
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <!-- SCHEDULE MODAL — FULLY WORKING -->
+  <div id="scheduleModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Schedule Mentorship Session</h2>
+        <span class="close-modal" onclick="closeScheduleModal()">×</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>Student:</strong> <span id="modalStudentName"></span></p>
+        
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="sessionDate" required>
+        </div>
+        <div class="form-group">
+          <label>Time</label>
+          <input type="time" id="sessionTime" required>
+        </div>
+        <div class="form-group">
+          <label>Topic</label>
+          <input type="text" id="modalTopic" required>
+        </div>
+        <div class="form-group">
+          <label>Meeting Link (optional)</label>
+          <input type="text" id="meetLink" placeholder="https://meet.google.com/new">
+        </div>
+
+        <div class="modal-buttons">
+          <button class="btn-cancel" onclick="closeScheduleModal()">Cancel</button>
+          <button class="btn-save" onclick="saveSchedule()">Save & Notify Student</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Old edit modal removed — we only need one beautiful modal -->
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/upcoming_sessions.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch('../includes/header.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('header-placeholder').innerHTML = data);
+      fetch('../includes/footer.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    });
+  </script>
+</body>
+</html>

@@ -29,15 +29,15 @@ document.getElementById('alumniLoginForm').addEventListener('submit', async func
         
         if (response.success) {
             // Store user data in localStorage
-            localStorage.setItem('currentUser', JSON.stringify(response.user));
+            localStorage.setItem('currentUser', JSON.stringify(response));
             localStorage.setItem('userRole', 'alumni');
             
-            console.log('✅ Login successful:', response.user);
+            console.log('✅ Login successful:', response);
             showSuccess('Login successful! Redirecting...');
             
             // Redirect to alumni dashboard
             setTimeout(() => {
-                window.location.href = '/frontend/alumni_details.html';
+                window.location.href = '/frontend/alumni_home.html';
             }, 1500);
             
         } else {

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - BUP Alumni</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/student_profile.css">
+
+</head>
+<script src="/js/student_profile.js"></script>
+<body>
+    <!-- Top Popup -->
+    <div class="top-popup" id="topPopup">
+        <div class="popup-content">
+            <div class="popup-icon">✓</div>
+            <div class="popup-text">Your profile has been updated successfully!</div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="../images/bup-logo.png" alt="BUP Logo" class="logo">
+                    <div class="logo-text">
+                        <h1>Bangladesh University of Professionals</h1>
+                        <p>Alumni Association</p>
+                    </div>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="student_home.html" class="nav-link">Home</a></li>
+                        <li><a href="../events.html" class="nav-link">About us</a></li>
+                        <li><a href="student_profile.html" class="nav-link active">My Profile</a></li>
+                       
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container profile-container">
+            <!-- Centered Profile Title -->
+            <div class="profile-header">
+                <h1 class="profile-title">Student Profile</h1>
+            </div>
+            
+            <div class="profile-content">
+                <!-- Profile Main Content -->
+                <div class="profile-main">
+                    <!-- Personal Information Section -->
+                    <div class="info-section">
+                        <h3 class="section-title">Personal Information</h3>
+                        
+                        <form class="profile-form" id="profileForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fullName" class="form-label">Full Name</label>
+                                    <input type="text" id="fullName" class="form-input" value="Samia Rahman" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="studentId" class="form-label">Student ID</label>
+                                    <input type="text" id="studentId" class="form-input" value="BUP-CSE-2018-001" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="department" class="form-label">Department</label>
+                                    <input type="text" id="department" class="form-input" value="Computer Science & Engineering" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="batch" class="form-label">Batch</label>
+                                    <input type="text" id="batch" class="form-input" value="2018" readonly>
+                                </div>
+
+                                <!-- New Fields -->
+                                <div class="form-group">
+                                    <label for="currentYear" class="form-label">Current Year/Semester</label>
+                                    <input type="text" id="currentYear" class="form-input" value="4th Year, 2nd Semester" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="gender" class="form-label">Gender</label>
+                                    <input type="text" id="gender" class="form-input" value="Female" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bloodGroup" class="form-label">Blood Group</label>
+                                    <input type="text" id="bloodGroup" class="form-input" value="A+" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="religion" class="form-label">Religion</label>
+                                    <input type="text" id="religion" class="form-input" value="Islam" readonly>
+                                </div>
+                                <!-- End of New Fields -->
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" id="email" class="form-input" value="samia.rahman@example.com" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="phone" class="form-input" value="+880 1234 567890" readonly>
+                                </div>
+                                
+                                <div class="form-group full-width">
+                                    <label for="address" class="form-label">Current Address</label>
+                                    <textarea id="address" class="form-input" rows="3" readonly>123/A, Road #5, Block C, Bashundhara R/A, Dhaka</textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Social Media Links Section -->
+                    <div class="info-section">
+                        <h3 class="section-title">Social Media Links</h3>
+                        
+                        <div class="social-links-grid">
+                            <div class="form-group">
+                                <label for="linkedin" class="form-label">LinkedIn</label>
+                                <div class="input-with-icon">
+                                    <input type="url" id="linkedin" class="form-input" value="https://linkedin.com/in/samia-rahman" readonly>
+                                    <a href="https://linkedin.com/in/samia-rahman" target="_blank" class="social-link-icon">🔗</a>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="facebook" class="form-label">Facebook</label>
+                                <div class="input-with-icon">
+                                    <input type="url" id="facebook" class="form-input" value="https://facebook.com/samia.rahman" readonly>
+                                    <a href="https://facebook.com/samia.rahman" target="_blank" class="social-link-icon">🔗</a>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="twitter" class="form-label">Twitter</label>
+                                <div class="input-with-icon">
+                                    <input type="url" id="twitter" class="form-input" value="https://twitter.com/samia_rahman" readonly>
+                                    <a href="https://twitter.com/samia_rahman" target="_blank" class="social-link-icon">🔗</a>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="github" class="form-label">GitHub</label>
+                                <div class="input-with-icon">
+                                    <input type="url" id="github" class="form-input" value="https://github.com/samia-rahman" readonly>
+                                    <a href="https://github.com/samia-rahman" target="_blank" class="social-link-icon">🔗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="form-actions" id="formActions">
+                        <button type="button" class="back-button" id="backBtn" onclick="window.history.back()">Back</button>
+                        <div class="edit-buttons">
+                            <button type="button" class="btn-secondary" id="cancelEditBtn" style="display: none;">Cancel</button>
+                            <button type="button" class="btn-primary" id="saveProfileBtn" style="display: none;">Save Changes</button>
+                            <button type="button" class="btn-primary" id="editProfileBtn">Edit Profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/bup-logo.png" alt="BUP Logo" class="logo">
+                        <h3>BUP Alumni Association</h3>
+                    </div>
+                    <p class="footer-description">
+                        Connecting Bangladesh University of Professionals alumni worldwide to foster professional growth, networking, and lifelong learning.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../events.html">Events</a></li>
+                        <li><a href="../mentorship.html">Mentorship</a></li>
+                        <li><a href="../blood-bank.html">Blood Bank</a></li>
+                        <li><a href="user-profile.html">My Profile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="../career-center.html">Career Center</a></li>
+                        <li><a href="../mentorship-program.html">Mentorship Program</a></li>
+                        <li><a href="../alumni-benefits.html">Alumni Benefits</a></li>
+                        <li><a href="../news.html">News & Updates</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p>Bangladesh University of Professionals</p>
+                        <p>Mirpur Cantonment, Dhaka-1216</p>
+                        <p>Bangladesh</p>
+                        <p>Email: alumni@bup.edu.bd</p>
+                        <p>Phone: +880 123 456 7890</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bangladesh University of Professionals Alumni Association. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        (function() {
+            'use strict';
+            
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle && navList) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navList.classList.toggle('active');
+                });
+            }
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (navList.classList.contains('active')) {
+                        navList.classList.remove('active');
+                    }
+                });
+            });
+        })();
+
+        // Profile editing functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const editProfileBtn = document.getElementById('editProfileBtn');
+            const cancelEditBtn = document.getElementById('cancelEditBtn');
+            const saveProfileBtn = document.getElementById('saveProfileBtn');
+            const topPopup = document.getElementById('topPopup');
+            const formInputs = document.querySelectorAll('.form-input');
+            
+            let originalValues = {};
+            
+            // Store original values when page loads
+            formInputs.forEach(input => {
+                originalValues[input.id] = input.value;
+            });
+            
+            // Edit profile button click
+            editProfileBtn.addEventListener('click', function() {
+                // Make all inputs editable except student ID and department
+                formInputs.forEach(input => {
+                    if (input.id !== 'studentId' && input.id !== 'department' && input.id !== 'batch') {
+                        input.readOnly = false;
+                    }
+                });
+                
+                // Show action buttons
+                cancelEditBtn.style.display = 'inline-block';
+                saveProfileBtn.style.display = 'inline-block';
+                editProfileBtn.style.display = 'none';
+                
+                // Hide popup if visible
+                topPopup.style.display = 'none';
+                document.body.classList.remove('popup-active');
+            });
+            
+            // Cancel edit button click
+            cancelEditBtn.addEventListener('click', function() {
+                // Restore original values
+                formInputs.forEach(input => {
+                    input.value = originalValues[input.id];
+                    input.readOnly = true;
+                });
+                
+                // Hide action buttons
+                cancelEditBtn.style.display = 'none';
+                saveProfileBtn.style.display = 'none';
+                editProfileBtn.style.display = 'inline-block';
+                
+                // Hide popup if visible
+                topPopup.style.display = 'none';
+                document.body.classList.remove('popup-active');
+            });
+            
+           // Save profile button click
+saveProfileBtn.addEventListener('click', async function() {
+    // Get the logged in user
+    const loggedInUser = JSON.parse(localStorage.getItem('currentUser'));
+    
+    // Prepare data to send to server
+    const updatedData = {
+        student_id: loggedInUser.id,
+        name: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        department: document.getElementById('department').value,
+        batch: document.getElementById('batch').value,
+        current_year: document.getElementById('currentYear').value,
+        address: document.getElementById('address').value,
+        gender: document.getElementById('gender').value,
+        bloodgroup: document.getElementById('bloodGroup').value,
+        religion: document.getElementById('religion').value,
+        facebook: document.getElementById('facebook').value,
+        linkedin: document.getElementById('linkedin').value
+    };
+
+    try {
+        // Send data to server
+        const response = await fetch('/api/student-profile', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedData)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            // SUCCESS - continue with existing UI updates
+            // Make all inputs read-only again
+            formInputs.forEach(input => {
+                input.readOnly = true;
+            });
+            
+            // Update original values
+            formInputs.forEach(input => {
+                originalValues[input.id] = input.value;
+            });
+            
+            // Hide action buttons
+            cancelEditBtn.style.display = 'none';
+            saveProfileBtn.style.display = 'none';
+            editProfileBtn.style.display = 'inline-block';
+            
+            // Scroll to top first
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            
+            // Show TOP POPUP after scroll
+            setTimeout(function() {
+                topPopup.style.display = 'block';
+                document.body.classList.add('popup-active');
+                
+                // Hide popup after 3 seconds
+                setTimeout(function() {
+                    topPopup.style.display = 'none';
+                    document.body.classList.remove('popup-active');
+                }, 3000);
+            }, 500);
+        } else {
+            alert('Failed to update profile: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Error updating profile:', error);
+        alert('Error updating profile. Please try again.');
+    }
+});
+        });
+    </script>
+</body>
+</html>

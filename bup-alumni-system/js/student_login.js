@@ -37,7 +37,7 @@ document.getElementById('studentLoginForm').addEventListener('submit', async fun
             
             // Redirect to student dashboard
             setTimeout(() => {
-                window.location.href = '/frontend/alumni_details.html';
+                window.location.href = '/frontend/student_home.html';
             }, 1500);
             
         } else {

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home | BUP Alumni Association</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/student_home.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="home-wrapper">
+        <div class="container">
+
+            <div class="page-header">
+                <h1>Welcome Back, Student!</h1>
+                <p>Access all student features from one place.</p>
+            </div>
+
+            <!-- Feature Cards -->
+            <section class="home-cards">
+
+                <a href="student_profile.html" class="card">
+                    <h3>My Profile</h3>
+                    <p>View and manage your academic profile.</p>
+                </a>
+
+                <a href="alumni_directory.html" class="card">
+                    <h3>Alumni Directory</h3>
+                    <p>Explore alumni from all departments.</p>
+                </a>
+
+                <a href="events.html" class="card">
+                    <h3>Events</h3>
+                    <p>Explore workshops, seminars, and student programs.</p>
+                </a>
+
+                <a href="blood_bank.html" class="card">
+                    <h3>Blood Bank</h3>
+                    <p>Find blood donors or request urgent help.</p>
+                </a>
+
+                <a href="mentorship_student_dashboard.html" class="card">
+                    <h3>Mentorship</h3>
+                    <p>Connect with alumni mentors and get guidance.</p>
+                </a>
+
+            
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Header & Footer -->
+    <script src="../js/student_home.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+// Load Header
+fetch('../includes/header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header-placeholder').innerHTML = data)
+    .catch(err => console.error("Header Error:", err));
+
+// Load Footer
+fetch('../includes/footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer-placeholder').innerHTML = data)
+    .catch(err => console.error("Footer Error:", err));
+
+});
+
+    </script>
+</body>
+</html>

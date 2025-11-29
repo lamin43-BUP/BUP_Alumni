@@ -668,3 +668,18 @@ body {
         justify-content: center;
     }
 }
+
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Mobile Fix */
+  @media (max-width: 768px) {
+    .notif-dropdown {
+      width: 320px;
+      right: -50px;
+    }
+    .notification-container { margin-left: 1rem; }
+  }

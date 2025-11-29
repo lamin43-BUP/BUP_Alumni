@@ -22,8 +22,10 @@ body {
 }
 
 .page-header {
+  color:#ffffff;
   text-align: center;
   margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
 
 .offers-grid {
@@ -38,6 +40,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 14px;
   width: 300px;
+  height: 300px;;
   padding: 1.5rem;
   color: var(--white);
   box-shadow: 0 8px 20px rgba(0,0,0,0.4);
@@ -115,4 +118,29 @@ body {
   top: 20px;
   right: 25px;
   cursor: pointer;
+}
+
+.modal-overlay.active {
+  display: flex !important;
+}
+
+.register-submit-btn {
+  background: #10b981 !important;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.register-submit-btn:hover {
+  background: #059669 !important;
+}
+
+.register-btn {
+  background: #10b981 !important;
+  margin-left: 8px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+
+.register-btn:hover {
+  background: #059669 !important;
 }

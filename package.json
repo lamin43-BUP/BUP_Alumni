@@ -1,0 +1,20 @@
+{
+  "name": "bup_alumni",
+  "version": "1.0.0",
+  "description": "![Homepage](resources/UI_for_Home_page/homepage.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamin43-BUP/BUP_Alumni.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lamin43-BUP/BUP_Alumni/issues"
+  },
+  "homepage": "https://github.com/lamin43-BUP/BUP_Alumni#readme"
+}

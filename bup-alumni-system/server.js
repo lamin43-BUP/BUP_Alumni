@@ -1,22 +1,49 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const session = require('express-session');
 require('dotenv').config();
 
 // Import routes
 const studentRoutes = require('./routes/studentRoutes');
 const alumniRoutes = require('./routes/alumniRoutes');
 const authRoutes = require('./routes/authRoutes');
+const offerRoutes = require('./routes/offerRoutes');
+const applicationRoutes = require('./routes/applicationRoutes');
+const sessionsRoutes = require('./routes/sessionsRoutes');
+const studentProfileRoutes = require('./routes/studentProfileRoutes');
+const alumniProfileRoutes = require('./routes/alumniProfileRoutes');
+const feedbackRoutes = require('./routes/feedbackRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// ===============================
 // Middleware
-app.use(cors());
+// ===============================
+app.use(cors({
+    origin: true,
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files FIRST
+// -------------------------------
+// Session middleware
+// -------------------------------
+app.use(session({
+    secret: process.env.SESSION_SECRET || 'your-secret-key-here',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: false,
+        maxAge: 24 * 60 * 60 * 1000
+    }
+}));
+
+// -------------------------------
+// Serve static files
+// -------------------------------
 app.use(express.static(path.join(__dirname, '.')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
@@ -24,18 +51,30 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/frontend', express.static(path.join(__dirname, 'frontend')));
 app.use('/includes', express.static(path.join(__dirname, 'includes')));
 
-// Debug middleware to log all API requests
+// -------------------------------
+// Debug middleware for API routes
+// -------------------------------
 app.use('/api/*', (req, res, next) => {
     console.log(`📨 API Request: ${req.method} ${req.originalUrl}`);
     next();
 });
 
+// ===============================
 // API Routes
+// ===============================
 app.use('/api/students', studentRoutes);
 app.use('/api/alumni', alumniRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/offers', offerRoutes);
+app.use('/api/applications', applicationRoutes);
+app.use('/api/sessions', sessionsRoutes);
+app.use('/api/student-profile', studentProfileRoutes);
+app.use('/api/alumni-profile', alumniProfileRoutes);
+app.use('/api', feedbackRoutes);
 
-// Health check route
+// ===============================
+// Health check
+// ===============================
 app.get('/api/health', (req, res) => {
     res.json({ 
         success: true, 
@@ -45,7 +84,9 @@ app.get('/api/health', (req, res) => {
     });
 });
 
+// ===============================
 // Test database connection
+// ===============================
 app.get('/api/test-db', async (req, res) => {
     try {
         const db = require('./config/database');
@@ -65,7 +106,9 @@ app.get('/api/test-db', async (req, res) => {
     }
 });
 
-// Test alumni API directly
+// ===============================
+// Test alumni table access
+// ===============================
 app.get('/api/test-alumni', async (req, res) => {
     try {
         const db = require('./config/database');
@@ -85,33 +128,37 @@ app.get('/api/test-alumni', async (req, res) => {
     }
 });
 
-// Serve alumni directory page
-app.get('/alumni-directory', (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend', 'alumni_details.html'));
-});
-
-// Serve main page
+// ===============================
+// Serve frontend pages
+// ===============================
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });
 
-// Serve other frontend pages
-app.get('/frontend/:page', (req, res) => {
+app.get('/alumni-directory', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend', 'alumni_details.html'));
+});
+
+// Minimal fix: allow other frontend pages including create_offer.html
+app.get('/frontend/:page', (req, res, next) => {
     const page = req.params.page;
     const allowedPages = [
         'index.html', 'signup_select.html', 'student_signup.html', 
         'alumni_signup.html', 'login_select.html', 'student_login.html', 
-        'alumni_login.html', 'alumni_details.html'
+        'alumni_login.html', 'alumni_details.html', 'create_offer.html',
+        'student_profile.html', 'contact.html'
     ];
-    
+
     if (allowedPages.includes(page)) {
         res.sendFile(path.join(__dirname, 'frontend', page));
     } else {
-        res.status(404).send('Page not found');
+        next(); // fallback to 404 handler
     }
 });
 
+// ===============================
 // Error handling middleware
+// ===============================
 app.use((err, req, res, next) => {
     console.error('Server Error:', err.stack);
     res.status(500).json({
@@ -121,7 +168,9 @@ app.use((err, req, res, next) => {
     });
 });
 
+// ===============================
 // 404 handler for API routes
+// ===============================
 app.use('/api/*', (req, res) => {
     res.status(404).json({
         success: false,
@@ -129,11 +178,31 @@ app.use('/api/*', (req, res) => {
     });
 });
 
-// 404 handler for pages
+// ===============================
+// 404 handler for frontend pages (catch-all)
+// ===============================
 app.use('*', (req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });
 
+// ========= ADD THIS EXACT BLOCK =========
+app.post('/api/feedback', async (req, res) => {
+    try {
+        const { name, email, feedback_message } = req.body;
+
+        const query = 'INSERT INTO feedbacks (name, email, feedback_message) VALUES (?, ?, ?)';
+        await db.query(query, [name, email, feedback_message]);
+
+        res.status(200).json({ success: true });
+    } catch (error) {
+        console.log('Feedback save error:', error);
+        res.status(500).json({ success: false });
+    }
+});
+// =======================================
+// ===============================
+// Start server
+// ===============================
 app.listen(PORT, () => {
     console.log(`🚀 BUP Alumni System Server is running on port ${PORT}`);
     console.log(`📝 Environment: ${process.env.NODE_ENV || 'development'}`);

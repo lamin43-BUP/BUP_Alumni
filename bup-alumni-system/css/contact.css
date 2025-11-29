@@ -286,3 +286,15 @@
         min-height: 120px;
     }
 }
+
+/* Make both sections equal height */
+.contact-grid {
+    align-items: stretch; /* both columns same height */
+}
+
+.contact-info-card,
+.feedback-form {
+    height: 90%; /* forces equal height */
+    display: flex;
+    flex-direction: column;
+}

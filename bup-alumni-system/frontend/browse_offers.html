@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Browse Mentorship Offers | BUP Alumni Association</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/browse_offers.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main class="browse-main">
+    <div class="container">
+      <div class="page-header">
+        <h1>Available Mentorship Offers</h1>
+        <p class="page-subtitle">Explore current mentorship opportunities from BUP alumni and mentors.</p>
+      </div>
+
+      <section id="offers-section" class="offers-grid">
+        <!-- Offers injected here -->
+      </section>
+
+      <div id="noOffers" class="no-offers-message" style="display:none; text-align:center; padding:3rem; color:#94a3b8;">
+        <p>No active mentorship offers right now. Check back soon!</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn" onclick="closeRegisterModal()">×</button>
+      <h2>Register for Mentorship</h2>
+      <p><strong>Offer:</strong> <span id="modalTitle"></span></p>
+      <p><strong>Mentor:</strong> <span id="modalAlumni"></span></p>
+      <textarea id="registerMessage" placeholder="Why do you want this mentorship? What are your goals? (Required)" rows="6"></textarea>
+      <button class="view-btn register-submit-btn" id="submitRegister">Submit Registration</button>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="../js/browse_offers.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("../includes/header.html")
+        .then(res => res.text())
+        .then(html => document.getElementById("header-placeholder").innerHTML = html);
+      fetch("../includes/footer.html")
+        .then(res => res.text())
+        .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+    });
+  </script>
+</body>
+</html>
