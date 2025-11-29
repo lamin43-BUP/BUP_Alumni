@@ -4,24 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Sessions | BUP Alumni Association</title>
-
-  <!-- Global + Page CSS -->
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/my_sessions.css">
 </head>
 <body>
-  <!-- Header Include -->
   <div id="header-placeholder"></div>
 
   <main class="my-sessions-wrapper">
     <div class="container">
-      <!-- Page Header -->
       <div class="page-header">
         <h1>My Scheduled Sessions</h1>
         <p class="page-subtitle">View and join your upcoming mentorship sessions.</p>
       </div>
 
-      <!-- Sessions Table -->
       <section class="sessions-section">
         <div class="table-container">
           <table class="sessions-table">
@@ -36,98 +31,24 @@
               </tr>
             </thead>
             <tbody id="sessions-body">
-              <!-- Demo rows inserted by JS -->
+              <!-- Real data injected here -->
             </tbody>
           </table>
+          <div id="no-sessions" style="display:none; text-align:center; padding:3rem; color:#94a3b8;">
+            <p>No sessions scheduled yet.</p>
+          </div>
         </div>
       </section>
     </div>
   </main>
 
-  <!-- Footer Include -->
   <div id="footer-placeholder"></div>
 
+  <script src="../js/my_sessions.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Load header and footer
-      fetch('../includes/header.html')
-        .then(res => res.text())
-        .then(data => document.getElementById('header-placeholder').innerHTML = data)
-        .catch(err => console.error('Header load error:', err));
-
-      fetch('../includes/footer.html')
-        .then(res => res.text())
-        .then(data => document.getElementById('footer-placeholder').innerHTML = data)
-        .catch(err => console.error('Footer load error:', err));
-
-      // Demo session data
-      const sessions = [
-        {
-          title: "Career Guidance in Data Science",
-          mentor: "Dr. Anik Rahman",
-          date: "2025-11-10",
-          time: "14:00",
-          link: "https://zoom.us/demo1",
-        },
-        {
-          title: "Leadership & Communication",
-          mentor: "Ms. Sara Ahmed",
-          date: "2025-11-12",
-          time: "10:00",
-          link: "https://zoom.us/demo2",
-        },
-        {
-          title: "Business Strategy Mentorship",
-          mentor: "Mr. Tarek Hossain",
-          date: "2025-11-08",
-          time: "16:00",
-          link: "https://zoom.us/demo3",
-        },
-        {
-          title: "Healthcare Career Advice",
-          mentor: "Dr. Rina Khan",
-          date: "2025-11-05",
-          time: "11:00",
-          link: "https://zoom.us/demo4",
-        },
-        {
-          title: "Personal Development Session",
-          mentor: "Ms. Laila Hossain",
-          date: "2025-11-03",
-          time: "15:00",
-          link: "https://zoom.us/demo5",
-        }
-      ];
-
-      const today = new Date("2025-11-08"); // demo current date
-      const tbody = document.getElementById("sessions-body");
-
-      sessions.forEach(session => {
-        const sessionDate = new Date(session.date + "T" + session.time);
-        let status = "";
-        let rowClass = "";
-
-        if(sessionDate < today) {
-          status = "Completed";
-          rowClass = "completed";
-        } else {
-          status = "Scheduled";
-          rowClass = "upcoming";
-        }
-
-        const tr = document.createElement("tr");
-        tr.className = rowClass;
-
-        tr.innerHTML = `
-          <td>${session.title}</td>
-          <td>${session.mentor}</td>
-          <td>${session.date}</td>
-          <td>${session.time}</td>
-          <td><a href="${session.link}" target="_blank" class="btn-join">Join Session</a></td>
-          <td><span class="status-badge ${status.toLowerCase()}">${status}</span></td>
-        `;
-        tbody.appendChild(tr);
-      });
+      fetch('../includes/header.html').then(r => r.text()).then(h => document.getElementById('header-placeholder').innerHTML = h);
+      fetch('../includes/footer.html').then(r => r.text()).then(f => document.getElementById('footer-placeholder').innerHTML = f);
     });
   </script>
 </body>

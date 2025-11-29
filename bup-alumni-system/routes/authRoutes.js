@@ -7,22 +7,33 @@ const db = require('../config/database');
 const router = express.Router();
 
 // Create transporter for email (using Gmail)
-const transporter = nodemailer.createTransport({
+// MAKE EMAIL GLOBAL — SO ALL ROUTES CAN USE IT
+global.emailTransporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.EMAIL_USER || 'your-email@gmail.com',
-        pass: process.env.EMAIL_PASS || 'your-app-password'
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
     }
 });
 
-// Test email configuration
-transporter.verify(function(error, success) {
+// Test once when server starts
+global.emailTransporter.verify((error, success) => {
+    if (error) {
+        console.log("Email NOT ready:", error);
+    } else {
+        console.log("OFFICIAL BUP EMAIL READY — CAN SEND TO ALL USERS!");
+    }
+});
+
+
+global.emailTransporter.verify(function(error, success) {
     if (error) {
         console.log('❌ Email configuration error:', error);
     } else {
         console.log('✅ Email server is ready to send messages');
     }
 });
+
 
 // Forgot password - send reset link
 router.post('/forgot-password', async (req, res) => {
