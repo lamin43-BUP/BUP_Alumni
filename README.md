@@ -8,14 +8,6 @@ The BUP Alumni Management System is a web platform designed to strengthen commun
 <br>
 <br>
 
-## Team Members:
-- Hasibul Islam Mitul – 2254901031
-- Samia Maliha – 2254901043  
-- Ishrat Jahan – 2254901071  
-- Anika Tasnim Mrittika – 2254901115 
-
-
-<br>
 
 ## Prerequisites Installation:
 1. VS Code
